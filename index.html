@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Férias Cafor - Acelen</title>
+<style>
+:root{--bg:#12151c;--c1:#1a1f2a;--c2:#232a38;--tx:#e8ecf3;--mu:#8b95a7;--ac:#4fb8d8;--ok:#3ec28a;--er:#ef5b5b;--wa:#f0b429;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{height:100%}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1200px;margin:0 auto;padding:14px}
+h1{font-size:22px;margin:4px 0}h2{font-size:16px;margin:14px 0 8px}.mu{color:var(--mu);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.tag{display:inline-block;border:1px solid #8a6d1a;color:var(--wa);background:#2a2410;padding:4px 12px;border-radius:99px;font-size:12px;letter-spacing:.08em;margin:8px 0}
+.tabs{display:flex;gap:4px;overflow-x:auto;background:var(--c1);border:1px solid #2b3345;border-radius:12px;padding:5px;margin:10px 0}
+.tabs button{flex:none;background:none;border:0;color:var(--mu);padding:9px 14px;border-radius:8px;font:inherit;font-weight:600}
+.tabs button.on{background:var(--c2);color:#fff}
+.btn{background:var(--c1);color:var(--tx);border:1px solid #3a4560;border-radius:9px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.btn.p{background:var(--ac);color:#06222c;border-color:var(--ac)}.btn.ok{background:var(--ok);color:#04261a;border-color:var(--ok)}.btn.er{background:var(--er);color:#2a0606;border-color:var(--er)}.btn.s{padding:5px 9px;font-size:13px}
+.ban{background:var(--c1);border-left:4px solid var(--ac);border-radius:6px;padding:14px;margin:10px 0}.ban .r{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.mes{display:flex;gap:6px;overflow-x:auto;margin:12px 0}.mes button{flex:none;background:var(--c1);border:0;color:var(--mu);border-radius:8px;padding:7px 11px;font:inherit}.mes .on{background:var(--ac);color:#06222c;font-weight:700}
+.sc{overflow-x:auto;border:1px solid #2b3345;border-radius:10px;background:var(--c1)}
+.g{display:grid;font-size:12px;min-width:max-content;border-bottom:1px solid #2b3345}
+.g>div{padding:5px 2px;text-align:center;min-height:26px;display:flex;align-items:center;justify-content:center}
+.lb{position:sticky;left:0;z-index:3;background:#1a1f2a;font-weight:700;color:var(--mu);justify-content:flex-start!important;padding-left:8px!important}
+.dh{flex-direction:column;line-height:1.1;font-weight:700;font-size:14px}.dh small{font-weight:400;color:var(--mu);font-size:10px}.dh.w{background:#202737}
+.sh{font-weight:700;color:#cfd6e4}.sh.n{background:#242c3d}.pt{color:var(--mu)}
+.bar{border-radius:6px;color:#14161c;font-weight:600;justify-content:flex-start!important;padding:3px 8px!important;overflow:hidden;white-space:nowrap;margin:2px 0;border:2px solid transparent;z-index:1}
+.bar{cursor:pointer}.fpo{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:60;display:flex;align-items:center;justify-content:center;padding:12px}.fpc{background:#1a1e27;color:#e8eaf0;border:1px solid var(--ac,#4da3ff);border-radius:14px;max-width:460px;width:100%;max-height:92vh;overflow:auto;padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.6)}.fpc h3{margin:0 0 4px}.fpc .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:10px 0;font-size:14px}.fpc .kv span:nth-child(odd){opacity:.65}.fpc .row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;margin-top:10px}.btn.dg{background:#c0392b;color:#fff;border-color:#c0392b}.bar.pe{border:2px dashed #fff;box-shadow:0 0 0 1px #14161c}.tg{display:inline-block;background:#14161c;color:#ffd166;border-radius:5px;padding:1px 7px;margin-right:6px;font-size:11px;font-weight:800;letter-spacing:.02em;white-space:nowrap}.bar.cf{outline:2px solid #ef5b5b;outline-offset:-2px}.hd{font-size:15px}
+.tb{width:100%;border-collapse:collapse;font-size:13px}.tb th{background:var(--c2);position:sticky;top:0;text-align:left;padding:7px;color:var(--mu);font-size:11px;text-transform:uppercase}.tb td{padding:5px 7px;border-bottom:1px solid #2b3345}
+.tw{overflow-x:auto;border:1px solid #2b3345;border-radius:10px;background:var(--c1)}
+input,select{background:#0f131a;color:var(--tx);border:1px solid #3a4560;border-radius:7px;padding:6px;font:inherit;font-size:13px;max-width:100%}
+.tb input,.tb select{width:100%;min-width:90px}
+.card{background:var(--c1);border:1px solid #2b3345;border-radius:10px;padding:12px;margin:10px 0}
+.res{border-radius:8px;padding:9px 11px;margin-top:8px;font-size:13px}.res.v{background:#10301f;border:1px solid var(--ok);color:#bdf2d8}.res.x{background:#341616;border:1px solid var(--er);color:#ffd0d0}.res.w{background:#2e2610;border:1px solid var(--wa);color:#ffe7a6;margin-top:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row label{display:flex;flex-direction:column;font-size:12px;color:var(--mu);gap:3px}
+.sw{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #2b3345}.sw input{width:20px;height:20px;flex:none}
+.bad{color:var(--er);font-weight:700}.good{color:var(--ok)}.st{padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;background:#2b3345}
+#toast{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;flex-direction:column;gap:6px}#toast div{background:#0b0e13;border:1px solid var(--ac);border-radius:9px;padding:10px 12px;font-size:13px}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(18,21,28,.93);backdrop-filter:blur(10px);border-bottom:1px solid #2b3345}
+.top h1{font-size:16px;margin:0;line-height:1.15}.top small{color:var(--mu);font-size:11px}.sp{flex:1}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#4fb8d8,#7a6cf0);display:grid;place-items:center;font-size:20px;flex:none}
+.ib{width:42px;height:42px;border-radius:11px;background:var(--c2);border:0;color:var(--tx);font-size:18px;display:grid;place-items:center;cursor:pointer;flex:none}
+body{background:radial-gradient(1200px 500px at 70% -10%,#1d2a3f 0,var(--bg) 60%) fixed,var(--bg)}
+main{padding:14px 14px 100px}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;margin:0;border-radius:0;border:0;border-top:1px solid #2b3345;background:rgba(26,31,42,.97);backdrop-filter:blur(10px);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));gap:2px;scrollbar-width:none}
+.tabs button{flex:1 0 66px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;font-size:10.5px;border-radius:10px}
+.tabs button i{font-style:normal;font-size:21px}.tabs button.on{background:none;color:var(--ac)}.tabs button.on i{transform:scale(1.15)}
+.card,.ban,.sc,.tw{border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.btn{min-height:42px}.btn.s{min-height:34px}.ban .r .btn{flex:1 1 140px}
+.mw{position:sticky;top:61px;z-index:10;background:var(--bg);padding:2px 0}.mes{padding:4px 0;margin:2px 0;display:flex;gap:6px;overflow-x:auto}
+input,select{font-size:16px}.tb input,.tb select{font-size:14px}
+.tabs button{position:relative}.bd{position:absolute;top:1px;right:12px;background:var(--er);color:#fff;border-radius:99px;font-size:10px;padding:0 5px;min-width:16px;text-align:center}
+#toast{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+@media(min-width:900px){
+.tabs{top:0;bottom:0;right:auto;width:224px;flex-direction:column;justify-content:flex-start;border-top:0;border-right:1px solid #2b3345;padding:14px 10px;gap:4px;overflow-y:auto}
+.tabs button{flex:none;flex-direction:row;gap:12px;font-size:15px;padding:12px 14px;width:100%;justify-content:flex-start}
+.tabs button i{font-size:18px}.tabs button.on{background:var(--c2);color:#fff}
+.top{margin-left:224px;padding:12px 28px}.top h1{font-size:19px}main{margin:0 0 0 224px;max-width:1400px;padding:20px 28px 40px}
+#toast{left:auto;right:20px;bottom:20px;width:380px}.mw{top:67px}.bd{position:static;margin-left:auto}.btn:hover,.tabs button:hover{filter:brightness(1.15)}
+}
+.tabs .pl{display:none}.gb{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:8px;color:#14161c;font-size:13px;font-weight:800;font-style:normal;vertical-align:middle}.mes button .gb{margin-right:4px}.gcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:10px 0}.gc{background:var(--c1);border:1px solid #2b3345;border-radius:12px;padding:10px;color:var(--tx);text-align:left;display:flex;flex-direction:column;gap:4px;font:inherit;cursor:pointer}.gc span{font-size:12px;color:var(--mu)}.gc .gb{width:30px;height:30px;font-size:15px}.lbl{font-size:11px;letter-spacing:.08em;color:var(--mu);padding:6px 14px 2px;font-weight:700}
+@media(min-width:900px){.tabs button.mob{display:none}.tabs button.pl{display:flex}.tabs div.pl{display:block}.mes.pbm{display:none}.tabs button.pl.on{background:var(--c2);color:#fff;box-shadow:inset 3px 0 0 var(--ac)}.tabs button.pl i{font-size:15px}}
+.tabs{scrollbar-width:thin;scrollbar-color:#5b6a8a #232a38;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{width:9px;height:7px}.tabs::-webkit-scrollbar-track{background:#232a38}.tabs::-webkit-scrollbar-thumb{background:#5b6a8a;border-radius:8px}.tabs::-webkit-scrollbar-thumb:hover{background:#7d8fb5}
+@media(min-width:900px){.tabs{background:linear-gradient(#1a1f2a 30%,rgba(26,31,42,0)) top,linear-gradient(rgba(26,31,42,0),#1a1f2a 70%) bottom,radial-gradient(farthest-side at 50% 0,rgba(0,0,0,.55),rgba(0,0,0,0)) top,radial-gradient(farthest-side at 50% 100%,rgba(0,0,0,.55),rgba(0,0,0,0)) bottom,#1a1f2a;background-repeat:no-repeat;background-size:100% 40px,100% 40px,100% 14px,100% 14px;background-attachment:local,local,scroll,scroll;overflow-y:scroll}}
+@media(min-width:900px) and (max-height:820px){.tabs{gap:2px;padding:10px 8px}.tabs button{padding:8px 12px;font-size:14px}.tabs button.pl{padding:6px 12px}.tabs button i{font-size:17px}.gb{width:20px;height:20px;font-size:11px}.lbl{padding:4px 12px 0}}
+</style><meta name="theme-color" content="#12151c"><meta name="apple-mobile-web-app-capable" content="yes"></head><body><header class="top"><div class="logo">🏖️</div><div><h1>Férias Cafor - Acelen</h1><small id="sub"></small></div><span id="net" class="st">⚪ local</span><div class="sp"></div><button id="sairb" class="btn s" style="display:none;margin-right:6px" onclick="sairGeral()">🚪 Sair</button><button class="ib" title="Exportar Excel" onclick="exp()">⬇</button><label class="ib" title="Importar Excel">⬆<input type="file" accept=".xls,.xml" hidden onchange="imp(this)"></label></header><nav class="tabs" id="tabs"></nav><main>
+
+
+
+
+<div id="app"></div></main><div id="toast"></div>
+<script>
+const P0=[{"id":1,"n":"Heber","f":"CAMPO","a":"TÉRMICA","t":"E","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":2,"n":"Douglas","f":"CAMPO","a":"ELÉTRICA","t":"C","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":3,"n":"Adailton","f":"CIC","a":"TÉRMICA","t":"A","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":4,"n":"Adelmir","f":"CIC","a":"ELÉTRICA","t":"A","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":5,"n":"Adelmo","f":"CAMPO","a":"TÉRMICA","t":"A","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":6,"n":"Alex Silva","f":"CAMPO","a":"U06","t":"C","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":7,"n":"Aderval","f":"CAMPO","a":"TÉRMICA","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":8,"n":"Agailton","f":"CIC","a":"ELÉTRICA","t":"E","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":9,"n":"Cristiano","f":"CAMPO","a":"TÉRMICA","t":"C","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":10,"n":"Alex Luis (E)","f":"CIC","a":"TÉRMICA","t":"E","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":11,"n":"Almir","f":"CAMPO","a":"TÉRMICA","t":"C","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":12,"n":"Americo","f":"CAMPO","a":"ELÉTRICA","t":"D","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":13,"n":"Andre Luis","f":"CIC","a":"TÉRMICA","t":"D","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":14,"n":"Antonio Lazaro","f":"CIC","a":"TÉRMICA","t":"C","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":15,"n":"Betuel","f":"CIC","a":"TÉRMICA","t":"B","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":16,"n":"Caroline","f":"CAMPO","a":"TÉRMICA","t":"ADM","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":17,"n":"Claudio Lopes","f":"CIC","a":"TÉRMICA","t":"E","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":18,"n":"Davi","f":"CAMPO/CIC","a":"TÉRMICA","t":"E","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":19,"n":"Lucas Rodrigues","f":"CAMPO","a":"TÉRMICA","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":20,"n":"Eleandro","f":"CAMPO","a":"TÉRMICA","t":"E","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":21,"n":"Ezequiel","f":"CAMPO","a":"TÉRMICA","t":"E","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":22,"n":"Francelio","f":"CIC","a":"ELÉTRICA","t":"C","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":23,"n":"Getulio","f":"CAMPO","a":"ELÉTRICA","t":"A","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":24,"n":"Gislei","f":"CAMPO","a":"ELÉTRICA","t":"B","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":25,"n":"Iac","f":"CIC","a":"TÉRMICA","t":"B","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":26,"n":"Israel","f":"CAMPO","a":"ELÉTRICA","t":"E","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":27,"n":"Joaquim","f":"CAMPO/CIC","a":"TÉRMICA","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":28,"n":"Jeferson (B)","f":"CAMPO","a":"ELÉTRICA","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":29,"n":"Joel","f":"CAMPO","a":"ELÉTRICA","t":"C","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":30,"n":"Jorge da Costa","f":"CIC","a":"ELÉTRICA","t":"B","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":31,"n":"Marcio","f":"CAMPO","a":"ELÉTRICA","t":"C","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":32,"n":"Rogério","f":"CAMPO","a":"TÉRMICA","t":"D","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":33,"n":"Mauricio","f":"CAMPO","a":"TÉRMICA","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":34,"n":"Moyses","f":"CAMPO","a":"TÉRMICA","t":"E","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":35,"n":"Mayara","f":"CAMPO","a":"U06","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":36,"n":"Ronaldo","f":"CAMPO","a":"ELÉTRICA","t":"E","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":37,"n":"Rubem","f":"CAMPO","a":"ELÉTRICA","t":"D","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":38,"n":"Alex Sidney","f":"CAMPO","a":"TÉRMICA","t":"D","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":39,"n":"Tarcisio","f":"CAMPO","a":"TÉRMICA","t":"B","nv":"CERTIFICADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":40,"n":"Vinicius","f":"CAMPO","a":"TÉRMICA","t":"C","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":41,"n":"Wellington","f":"CIC","a":"ELÉTRICA","t":"D","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":42,"n":"Willians","f":"CAMPO/CIC","a":"TÉRMICA","t":"D","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":43,"n":"Wilson","f":"CAMPO","a":"TÉRMICA","t":"D","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":44,"n":"Higor","f":"CAMPO","a":"ELÉTRICA","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":45,"n":"Danilo","f":"CAMPO","a":"ELÉTRICA","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":46,"n":"Alex Luis (B)","f":"CIC","a":"TÉRMICA","t":"B","nv":"EXPERIENTE","tp":"T","ve":"","ul":"","sal":30,"pn":"Sim"},{"id":47,"n":"Anderson Barbosa","f":"CAMPO","a":"TÉRMICA","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":48,"n":"Jeferson (A)","f":"CAMPO","a":"ELÉTRICA","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":49,"n":"Pedro Luciano","f":"CAMPO","a":"U06","t":"A","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":50,"n":"Lamarck","f":"CAMPO","a":"U06","t":"D","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":51,"n":"Rodrigo","f":"CAMPO","a":"U06","t":"E","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":52,"n":"Lisnar","f":"CAMPO","a":"U06","t":"B","nv":"HABILITADO","tp":"T","ve":"","ul":"","sal":30,"pn":"Não"},{"id":53,"n":"Uilson","f":"","a":"","t":"","nv":"GERENTE","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":54,"n":"Isabela","f":"","a":"","t":"","nv":"GERENTE","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":55,"n":"Ari","f":"","a":"TÉRMICA","t":"","nv":"CTO","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":56,"n":"Sergio","f":"","a":"ELÉTRICA","t":"A","nv":"SUPERVISOR","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":57,"n":"Antonio Reginaldo","f":"","a":"TÉRMICA","t":"B","nv":"SUPERVISOR","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":58,"n":"Diego","f":"","a":"TÉRMICA","t":"","nv":"ENGENHEIRO","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":59,"n":"Sheila","f":"","a":"TÉRMICA","t":"D","nv":"SUPERVISOR","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":60,"n":"Clovis","f":"","a":"ELÉTRICA","t":"","nv":"ESPECIALISTA","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":61,"n":"Samilli","f":"","a":"TÉRMICA","t":"C","nv":"SUPERVISOR","tp":"G","ve":"","ul":"","sal":30,"pn":"Não"},{"id":62,"n":"Edigleison","f":"CAMPO","a":"TÉRMICA","t":"ADM","nv":"HABILITADO","pn":"Não","sal":30,"tp":"T","ve":"","ul":"","cg":"TÉCNICO DE OPERAÇÃO"}];
+const RULES={efetivo:'Efetivo mínimo por turma e função (Painel Elétrica 1 · Painel Térmica 2 · Campo Elétrica 2 · Campo Térmica 3): alerta EFETIVO ABAIXO DO MÍNIMO',dias:'TOs: 1 ou 2 períodos de 10, 20 ou 30 dias (5 só se for remanescente)',cert:'CERTIFICADOS não podem estar de férias juntos',exp:'EXPERIENTES não podem estar de férias juntos',hab:'HABILITADOS no CIC não podem estar de férias juntos',ec:'EXPERIENTE + CERTIFICADO não podem juntos',ele:'Máx. 2 TOs da ELÉTRICA de férias no mesmo dia',ter:'Máx. 3 TOs da TÉRMICA de férias no mesmo dia',cic:'TOs de CIC não podem estar de férias juntos',tur:'Mesma turma (térmica ou elétrica, qualquer área): TOs não podem estar de férias juntos',supsup:'Supervisores não podem juntos entre si',supint:'Supervisor + Interino não podem juntos',sup2:'Supervisor não pode junto com 1 TO térmica + 1 elétrica',ger:'Engenheiros e Supervisores não podem junto com Gerente',engeng:'Engenheiros não podem juntos entre si',ctocto:'CTOs não podem juntos entre si',engcto:'Engenheiro + CTO da mesma área não podem juntos',cobertura:'Aprovação exige cobertura definida (“Quem vai cobrir?”)',painel:'Bloquear dia sem operador de painel no CIC',clt:'Aviso de fracionamento CLT (14 dias + 5 dias)'};
+const YMIN=2027,YMAX=2030;
+function pascoa(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),dia=((h+l-7*m+114)%31)+1;return Date.UTC(y,mo-1,dia)/864e5}
+const HOL=[];for(let y=YMIN;y<=YMAX;y++){const p=pascoa(y),f=(m,d)=>Date.UTC(y,m-1,d)/864e5;[f(1,1),p-48,p-47,p-2,f(4,21),f(5,1),p+60,f(7,2),f(9,7),f(10,12),f(11,2),f(11,15),f(11,20),f(12,8),f(12,25)].forEach(n=>HOL.push(n))}
+const MN=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],WD=['DOM','SEG','TER','QUA','QUI','SEX','SÁB'];
+const COR={A:'#c777dc',B:'#e8a06a',C:'#d6c843',D:'#62c886',E:'#62aee8',X:'#99a3b6'};
+const TABS=['Painel','Ranking','Capacidade','Aprovação','Conflitos','Regras','Cadastro','Histórico','Pretensão'];
+const K='ferias2027',TN=['A','B','C','D','E'];
+let S,pm={},gestor=false,APR=false,FOC='',MEL='',GATE_APR=false,ASK=false;try{MEL=+localStorage.getItem('ferias2027_me')||''}catch(e){}try{APR=sessionStorage.getItem('apr')=='1';FOC=sessionStorage.getItem('foc')||''}catch(e){}
+const def=()=>({p:JSON.parse(JSON.stringify(P0)),v:[],r:Object.fromEntries(Object.keys(RULES).map(k=>[k,true])),rod:{st:'fechada',n:1,i:0},mes:0,ano:YMIN,pn:'A',fo:{},fp:{},mc:{},gd:'',tab:'Painel',me:1,anc:{A:'2027-01-10',B:'2027-01-06',C:'2027-01-08',D:'2027-01-02',E:'2027-01-04'}});
+try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
+S=S||def();
+function mig(){S.fo=S.fo||{};S.fp=S.fp||{};S.mc=S.mc||{};S.pn=S.pn||'A';if(!S.ano||S.ano>YMAX)S.ano=YMIN;if(S.anc&&S.anc.D=='2027-01-03'&&S.anc.E=='2027-01-05'){S.anc.D='2027-01-02';S.anc.E='2027-01-04'}for(const k in RULES)if(S.r[k]==null)S.r[k]=true;S.p.forEach(p=>{if(p.cg==null){if(p.tp=='G'){p.cg=p.nv;p.nv=''}else p.cg='TÉCNICO DE OPERAÇÃO'}})}mig();
+const ls=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const sv=()=>{ls();push()};
+const dn=s=>{const[a,b,c]=s.split('-').map(Number);return Math.floor(Date.UTC(a,b-1,c)/864e5)};
+const ds=n=>new Date(n*864e5).toISOString().slice(0,10);
+const fm=n=>{const[a,b,c]=ds(n).split('-');return c+'/'+b+'/'+a};
+const wd=n=>new Date(n*864e5).getUTCDay(),HS=new Set(HOL);
+const base=n=>HS.has(n)?4:(wd(n)%6==0?3.5:3),n1=x=>x.toFixed(1).replace('.',',');
+const esq=(t,n)=>{if(!S.anc[t])return null;const k=(((n-dn(S.anc[t]))%10)+10)%10;return k<2?'7x19':k<4?'19x7':'F'};
+const cic=p=>p.f.includes('CIC'),tc=s=>s?s[0]+s.slice(1).toLowerCase():'';
+let POOL=null;const act=()=>(POOL||S.v).filter(v=>v.st!='Reprovada');
+const cost=(i,f)=>{let s=0;for(let x=i;x<=f;x++)s+=base(x);return s};
+const toast=(m,ms)=>{const d=document.createElement('div');d.innerHTML=m;$('#toast').append(d);setTimeout(()=>d.remove(),ms||7000)};
+const $=s=>document.querySelector(s);
+const GN={A:'Turma A',B:'Turma B',C:'Turma C',D:'Turma D',E:'Turma E',G:'Gestão',GERAL:'Geral'};
+const grp=p=>p.tp=='T'&&TN.includes(p.t)?p.t:'G';
+const srt=(a,b)=>(a.ve||'9999').localeCompare(b.ve||'9999')||(a.ul||'0000').localeCompare(b.ul||'0000')||b.sal-a.sal;
+const rank=g=>S.p.filter(p=>g?(g=='GERAL'||grp(p)==g):p.tp=='T').sort(srt);
+
+function chk(pid,i,f,ign,cb){
+ const P=pm[pid],E=[],EK=[],W=[],R=S.r,seen={};
+ const ad=(k,m)=>{if(R[k]&&!seen[m]){seen[m]=1;E.push(m);EK.push(k)}};
+ const d=f-i+1;if(isNaN(d)||d<1)return{E:['Datas inválidas'],W};
+ const mine=act().filter(v=>v.pid==pid&&v.id!=ign);
+ if(P.tp=='T'){
+  if(![10,20,30].includes(d)&&!(d==5&&P.sal<=5))ad('dias','Período inválido: tem que ser 10, 20 ou 30');
+  if(mine.length>=2)ad('dias','Máximo de 2 períodos por pessoa');
+  if(R.clt&&Math.max(d,...mine.map(v=>v.d))<14)W.push('CLT: um período precisa ter no mínimo 14 dias (os demais, 5). A regra da empresa (múltiplo de 10) prevalece.');
+  if(mine.reduce((s,v)=>s+v.d,0)+d>P.sal)W.push('Total de dias excede o saldo ('+P.sal+').');
+ }
+ if(mine.some(v=>v.i<=f&&v.f>=i))E.push('Já tem férias neste período');
+ const ov=act().filter(v=>v.id!=ign&&v.pid!=pid&&v.i<=f&&v.f>=i);
+ for(const o of ov){const Q=pm[o.pid];if(!Q)continue;
+  const K=P.tp=='T'?'nv':'cg',m=Q.n+' ('+(Q.tp=='T'?Q.nv:Q.cg)+(cic(Q)&&Q.tp=='T'?' · CIC':'')+') já está de férias neste período';
+  const bt=(a,b)=>(P[K]==a&&Q[K]==b)||(P[K]==b&&Q[K]==a),same=P[K]==Q[K];
+  if(P.tp=='T'&&Q.tp=='T'){
+   if(same&&P.nv=='CERTIFICADO')ad('cert',m);
+   if(same&&P.nv=='EXPERIENTE')ad('exp',m);
+   if(same&&P.nv=='HABILITADO'&&cic(P)&&cic(Q))ad('hab',m);
+   if(bt('CERTIFICADO','EXPERIENTE'))ad('ec',m);
+   if(cic(P)&&cic(Q))ad('cic',m);
+   if(TN.includes(P.t)&&P.t==Q.t)ad('tur',Q.n+' (Turma '+Q.t+' · '+tc(Q.a)+') da mesma turma'+(P.a==Q.a?' e área':' (área diferente: '+tc(P.a)+' × '+tc(Q.a)+')')+' já está de férias neste período');
+  }
+  if(P.tp=='G'&&Q.tp=='G'){
+   if(same&&P.cg=='SUPERVISOR')ad('supsup',m);
+   if(bt('SUPERVISOR','INTERINO'))ad('supint',m);
+   if((P.cg=='GERENTE'&&['ENGENHEIRO','SUPERVISOR'].includes(Q.cg))||(Q.cg=='GERENTE'&&['ENGENHEIRO','SUPERVISOR'].includes(P.cg)))ad('ger',m);
+   if(same&&P.cg=='ENGENHEIRO')ad('engeng',m);
+   if(same&&P.cg=='CTO')ad('ctocto',m);
+   if(bt('ENGENHEIRO','CTO')&&P.a==Q.a)ad('engcto',m);
+  }
+ }
+ for(let x=i;x<=f;x++){
+  const on=ov.filter(o=>o.i<=x&&o.f>=x).map(o=>pm[o.pid]).filter(Boolean);on.push(P);
+  const T=on.filter(p=>p.tp=='T'),ce=T.filter(p=>p.a=='ELÉTRICA').length,ct=T.filter(p=>p.a=='TÉRMICA').length,dm=fm(x);
+  if(P.tp=='T'&&P.a=='ELÉTRICA'&&ce>2)ad('ele','Máximo 2 TOs da Elétrica de férias no mesmo dia ('+dm+')');
+  if(P.tp=='T'&&P.a=='TÉRMICA'&&ct>3)ad('ter','Máximo 3 TOs da Térmica de férias no mesmo dia ('+dm+')');
+  if(on.some(p=>p.cg=='SUPERVISOR')&&ce&&ct&&(P.cg=='SUPERVISOR'||(P.tp=='T'&&['ELÉTRICA','TÉRMICA'].includes(P.a))))ad('sup2','Supervisor junto com 1 TO térmica + 1 elétrica ('+dm+')');
+  if(P.tp=='T'&&cic(P)&&P.pn=='Sim'&&TN.includes(P.t)&&esq(P.t,x)!='F'){
+   const off=new Set(on.map(p=>p.id));
+   if(!S.p.some(p=>p.tp=='T'&&p.t==P.t&&cic(p)&&p.pn=='Sim'&&!off.has(p.id)))ad('painel','Sem cobertura de painel neste dia ('+dm+', Turma '+P.t+')');
+  }
+ }
+ if(R.efetivo&&P.tp=='T'&&TN.includes(P.t)){const cats=catOf(P);if(cats.length){const Vo=act().filter(v=>v.id!=ign&&v.pid!=pid),bad={};
+  for(let x=i;x<=f;x++){const r=efet(P.t,x,Vo,{pid,i,f,cob:cb});cats.forEach(k=>{if(r[k]<MINC(k)){const b=bad[k]||(bad[k]={d:x,n:0,v:r[k]});b.n++}})}
+  Object.keys(bad).forEach(k=>ad('efetivo','EFETIVO ABAIXO DO MÍNIMO: '+GN[P.t]+' ficaria com '+bad[k].v+' em '+CL[k]+' (mínimo '+MINC(k)+') por '+bad[k].n+' dia(s), a partir de '+fm(bad[k].d)))}}
+ return{E,W,EK};
+}
+
+const IC={Painel:'📅',Ranking:'🏆',Conflitos:'⚠️','Histórico':'📜',Capacidade:'📊','Aprovação':'✅',Regras:'⚙️',Cadastro:'👥','Pretensão':'✍️'};
+function setTab(t){S.tab=t;sv();render();window.scrollTo(0,0)}
+function render(){
+ pm={};S.p.forEach(p=>pm[p.id]=p);if(MEL&&!pm[MEL]){MEL='';try{localStorage.removeItem('ferias2027_me')}catch(e){}}if(!pm[S.me])S.me=MEL||S.p[0].id;if(!APR&&!needGate()&&grp(pm[S.me])!=gMeu()){const L=S.p.filter(p=>grp(p)==gMeu());S.me=(pm[MEL]&&grp(pm[MEL])==gMeu())?MEL:(L[0]?L[0].id:S.me)}
+ const NC=APR?confl().length:FOC?confl(FOC).length:0;$('#tabs').innerHTML=sideP()+TABS.map(t=>`<button class="${t==S.tab?'on':''}${t=='Painel'?' mob':''}" onclick="setTab('${t}')"><i>${t=='Aprovação'&&!(APR||FOC)?'🔒':IC[t]}</i>${t}${t=='Aprovação'&&NC?'<b class="bd">'+NC+'</b>':''}</button>`).join('');
+ {const lg=APR||FOC||(MEL&&pm[MEL]);const sb=$('#sairb');if(sb){sb.style.display=lg?'':'none';sb.textContent='🚪 Sair'+(APR?' (aprovador)':FOC?' (focal)':'')}}
+ $('#sub').textContent='Campanha '+YMIN+'–'+YMAX+' · '+S.tab+(MEL&&pm[MEL]&&!APR&&!FOC?' · 👤 '+pm[MEL].n:'');
+ const ab=$('#tabs button:not(.pl).on');if(ab&&ab.scrollIntoView)ab.scrollIntoView({inline:'center',block:'nearest'});
+ $('#app').innerHTML=needGate()?gate():(({Painel,Ranking,Conflitos,Capacidade,'Aprovação':Aprov,Regras,Cadastro,'Histórico':Hist,'Pretensão':Pret})[S.tab]||Painel)();
+ if(!needGate()){if(S.tab=='Pretensão')live();if(S.tab=='Histórico')fillLogins()}
+}
+function mesBar(){let y='';for(let a=YMIN;a<=YMAX;a++)y+=`<button class="${a==S.ano?'on':''}" onclick="S.ano=${a};sv();render()">${a}</button>`;return`<div class="mw"><div class="mes">${y}</div><div class="mes">${MN.map((m,i)=>`<button class="${i==S.mes?'on':''}" onclick="S.mes=${i};sv();render()">${m}<br><small>${S.ano}</small></button>`).join('')}</div></div>`}
+
+function cal(gs){const m=S.mes,n=new Date(Date.UTC(S.ano,m+1,0)).getUTCDate(),d0=dn(`${S.ano}-${String(m+1).padStart(2,'0')}-01`),dl=d0+n-1,cols=`118px repeat(${n},minmax(44px,1fr))`;
+ let h=`<div class="sc"><div class="g" style="grid-template-columns:${cols}"><div class="lb">${MN[m].toUpperCase()}<br>${S.ano}</div>`;
+ for(let x=d0;x<=dl;x++){const w=wd(x);h+=`<div class="dh ${w%6==0||HS.has(x)?'w':''}">${String(x-d0+1).padStart(2,'0')}<small>${WD[w]}</small></div>`}
+ h+='</div>';
+ const V=act().filter(v=>v.i<=dl&&v.f>=d0&&pm[v.pid]);
+ for(const g of gs){const t=g=='G'?'X':g,c=COR[t],mem=V.filter(v=>grp(pm[v.pid])==g).sort((a,b)=>a.i-b.i);
+  const ln=[],L=new Map();mem.forEach(v=>{let k=ln.findIndex(e=>e<v.i);if(k<0){k=ln.length;ln.push(0)}ln[k]=v.f;L.set(v.id,k)});
+  const nl=Math.max(1,ln.length);
+  h+=`<div class="g" style="grid-template-columns:${cols};border-left:4px solid ${c}">`;
+  if(t!='X'){
+   h+=`<div class="lb hd" style="color:${c};grid-row:1">${gi(g)}&nbsp;Turma ${t} <span class="st" style="margin-left:5px">${mem.length}</span></div>`;
+   for(let x=d0;x<=dl;x++){const s=esq(t,x);h+=`<div class="sh ${s=='F'?'':'n'}">${s}</div>`}
+   h+=`<div class="lb">PONTOS/DIA</div>`;
+   for(let x=d0;x<=dl;x++){const k=act().filter(v=>pm[v.pid]&&grp(pm[v.pid])==g&&v.i<=x&&v.f>=x).length;h+=`<div class="pt">${n1(Math.max(.4,base(x)-.8*k))}</div>`}
+  }else h+=`<div class="lb hd" style="color:${c}">${gi(g)}&nbsp;Gestão / ADM <span class="st" style="margin-left:5px">${mem.length}</span></div><div style="grid-column:2/-1"></div>`;
+  const r0=t=='X'?2:3;
+  h+=`<div class="lb" style="grid-row:${r0};grid-column:1/2;grid-row-end:span ${nl}">FÉRIAS</div>`;
+  mem.forEach(v=>{const p=pm[v.pid],a=Math.max(v.i,d0),b=Math.min(v.f,dl);
+   h+=`<div class="bar ${v.st=='Aprovada'?'':'pe'}" style="background-color:${c};grid-column:${a-d0+2}/span ${b-a+1};grid-row:${r0+L.get(v.id)}" title="${p.n} · ${v.st} · clique para abrir" onclick="openFP(${v.id})">${v.st=='Aprovada'?'':'<span class="tg">'+(TAG[v.st]||'⏳ Aguardando aprovação')+'</span>'}${v.i<d0?'◀ ':''}${p.n}&nbsp;<span style="font-weight:400">(${p.tp=='T'?p.f+' '+tc(p.a):tc(p.cg)+' '+tc(p.a)})</span>&nbsp;${v.d}d · ${n1(cost(v.i,v.f))}p${v.f>dl?' ▶':''}</div>`});
+  h+='</div>';
+ }
+ return h+'</div><p class="mu"><span class="tg">⏳ Aguardando aprovação</span> barra com borda tracejada = pedido ainda não aprovado · barra lisa = aprovado. 7x19 / 19x7 / F conforme escala 2x2 (início de cada turma ajustável em Regras).</p>';
+}
+function Painel(){const g=curP();if(g=='GERAL')return pbar()+Geral();
+ return pbar()+`<div class="ban"><b>${GN[g]} · marcação aberta.</b> Todos do grupo podem registrar suas férias quando quiserem; conflitos ficam como pretensão pendente de aprovação.<div class="r"><button class="btn" onclick="gestor=can(curP());if(!gestor)toast('Para inserir como gestor, entre como focal ou aprovador na aba Aprovação.');setTab(gestor?'Pretensão':'Aprovação')">Inserir férias (gestor)</button><button class="btn" onclick="gestor=false;setTab('Pretensão')">Minhas férias</button></div></div>`+resumoT(g)+mesBar()+cal([g]);
+}
+const H=s=>{s='refmat27|'+s;let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return String(4294967296*(2097151&h2)+(h1>>>0))};
+function loginApr(g){const nm=GN[g]||'';return`<div class="card" style="max-width:440px;margin:20px auto"><h2 style="margin-top:0">🔒 Aprovador e focal · ${nm}</h2>`+(S.pin?`<p>Digite o PIN do focal de ${nm} ou o PIN do aprovador.</p><div class="row"><label>PIN<input id="pin" type="password" inputmode="numeric" autocomplete="off" style="width:140px" onkeydown="if(event.key=='Enter')entrar()"></label><button class="btn p" onclick="entrar()">Entrar</button></div>`+(S.fp[g]?'':'<p class="mu" style="text-transform:none">Este grupo ainda não tem PIN de focal. O aprovador define na aba Regras.</p>'):`<p>Ainda não há PIN do aprovador. Quem for o aprovador deve criá-lo agora (mínimo 4 dígitos).</p><div class="row"><label>Novo PIN<input id="pin" type="password" inputmode="numeric" autocomplete="off" style="width:120px"></label><label>Repetir<input id="pin2" type="password" inputmode="numeric" autocomplete="off" style="width:120px"></label><button class="btn p" onclick="criarPin()">Criar e entrar</button></div>`)+'</div>'}
+const okApr=()=>{APR=true;try{sessionStorage.setItem('apr','1')}catch(e){}};
+function entrar(){const v=H($('#pin').value),g=curP();if(v==S.pin){okApr();logH('Entrou como aprovador');render();toast('Acesso de aprovador liberado.')}else if(S.fp[g]&&v==S.fp[g]){FOC=g;try{sessionStorage.setItem('foc',g)}catch(e){}logH('Entrou como focal da '+GN[g]);render();toast('Acesso de focal liberado: '+GN[g]+'.')}else toast('PIN incorreto.')}
+function criarPin(){const a=$('#pin').value,b=$('#pin2').value;if(a.length<4)return toast('Use pelo menos 4 dígitos.');if(a!=b)return toast('Os PINs não conferem.');S.pin=H(a);okApr();logH('Criou o PIN do aprovador');sv();render();toast('PIN criado. Guarde-o: só quem souber o PIN aprova.')}
+function sair(){APR=false;FOC='';GATE_APR=false;ASK=false;if(MEL)S.me=MEL;try{sessionStorage.removeItem('apr');sessionStorage.removeItem('foc')}catch(e){}render()}
+function sairGeral(){if(APR||FOC)return sair();if(MEL)trocaEu()}
+function trocarPin(){logH('Trocou o PIN do aprovador (o anterior foi apagado)');S.pin='';sv();sair();toast('Crie o novo PIN.')}
+const aprBar=()=>'<div class="row" style="justify-content:space-between;margin:0 0 8px"><span class="st">'+(APR?'🔓 Aprovador conectado':'🔓 Focal · '+(GN[FOC]||''))+'</span><span>'+(APR?'<button class="btn s" onclick="trocarPin()">Trocar PIN</button> ':'')+'<button class="btn s" onclick="sair()">Sair</button></span></div>';
+const can=g=>!!(APR||(FOC&&FOC==g));
+const needGate=()=>!APR&&!FOC&&!MEL&&!(GATE_APR&&S.tab=='Aprovação');
+function gate(){const gs=['A','B','C','D','E','G'];
+ return`<div class="card" style="max-width:520px;margin:20px auto"><h2 style="margin-top:0">👤 Quem é você?</h2><p>Escolha o seu nome. Depois disso, este aparelho fica vinculado a você: você verá o <b>Painel geral</b> e a escala <b>só da sua própria turma</b>. Crie também um <b>PIN pessoal</b> (4 a 8 números): é ele que você usa para <b>sair da conta</b> depois.</p><div class="row"><label>Meu nome<select id="gme"><option value="">— escolha —</option>${gs.map(g=>`<optgroup label="${GN[g]}">${S.p.filter(p=>grp(p)==g).map(p=>`<option value="${p.id}">${xe(p.n)}</option>`).join('')}</optgroup>`).join('')}</select></label><label>Criar PIN<input id="mp1" type="password" inputmode="numeric" autocomplete="off" maxlength="8" style="width:110px"></label><label>Repetir PIN<input id="mp2" type="password" inputmode="numeric" autocomplete="off" maxlength="8" style="width:110px" onkeydown="if(event.key=='Enter')eusou()"></label><button class="btn p" onclick="eusou()">Confirmar</button></div><p style="margin-top:14px"><button class="btn s" onclick="GATE_APR=true;S.tab='Aprovação';render()">Sou o aprovador (entrar com PIN)</button></p></div>`}
+const MPK='ferias2027_mepin';
+const mePin=()=>{try{const o=JSON.parse(localStorage.getItem(MPK)||'{}');return o.id==MEL?o.h:''}catch(e){return ''}};
+const setMePin=(id,pin)=>{try{localStorage.setItem(MPK,JSON.stringify({id,h:H(pin)}))}catch(e){}};
+function eusou(){const id=+$('#gme').value;if(!id||!pm[id])return toast('Escolha o seu nome na lista.');const a=($('#mp1')||{}).value||'',b=($('#mp2')||{}).value||'';if(!/^\d{4,8}$/.test(a))return toast('Crie um PIN pessoal com 4 a 8 números.');if(a!=b)return toast('Os dois PINs não são iguais.');setMePin(id,a);MEL=id;try{localStorage.setItem('ferias2027_me',String(id))}catch(e){}S.me=id;logH('Identificou-se neste aparelho como '+pm[id].n+' ('+GN[grp(pm[id])]+')');S.tab='Painel';S.pn='GERAL';sv();render();toast('Pronto, '+pm[id].n+'. Você vê o Painel geral e a sua turma.')}
+let MKP=false;
+function trocaEu(){if(!S.pin&&!mePin())return desligaEu();ASK=true;render()}
+function criaMePin(){const a=$('#mq1').value,b=$('#mq2').value;if(!/^\d{4,8}$/.test(a))return toast('PIN com 4 a 8 números.');if(a!=b)return toast('Os dois PINs não são iguais.');setMePin(MEL,a);MKP=false;logH('Criou o PIN pessoal: '+pm[MEL].n);render();toast('PIN criado. Use-o para sair da conta.')}
+function confTroca(){const v=H($('#pe').value);if((mePin()&&v==mePin())||(S.pin&&v==S.pin))desligaEu();else toast('PIN incorreto.')}
+function desligaEu(){if(pm[MEL])logH('Desvinculou o aparelho de '+pm[MEL].n);MEL='';ASK=false;try{localStorage.removeItem('ferias2027_me')}catch(e){}render()}
+const euBar=()=>MEL&&pm[MEL]&&!APR&&!FOC?`<div class="row" style="margin:0 0 8px;align-items:center"><span class="st">👤 ${xe(pm[MEL].n)} · ${GN[grp(pm[MEL])]} 🔒</span><button class="btn s" onclick="trocaEu()">Sair</button>${mePin()?'':'<button class="btn s" onclick="MKP=!MKP;render()">🔑 Criar meu PIN</button>'}</div>`+(MKP&&!mePin()?`<div class="card row"><label>Novo PIN<input id="mq1" type="password" inputmode="numeric" maxlength="8" autocomplete="off" style="width:110px"></label><label>Repetir<input id="mq2" type="password" inputmode="numeric" maxlength="8" autocomplete="off" style="width:110px" onkeydown="if(event.key=='Enter')criaMePin()"></label><button class="btn p s" onclick="criaMePin()">Salvar PIN</button></div>`:'')+(ASK?`<div class="card row"><label>${mePin()?'Seu PIN (ou do aprovador)':'PIN do aprovador'}<input id="pe" type="password" inputmode="numeric" autocomplete="off" style="width:130px" onkeydown="if(event.key=='Enter')confTroca()"></label><button class="btn p s" onclick="confTroca()">Sair da conta</button><button class="btn s" onclick="ASK=false;render()">Cancelar</button></div>`:''):'';
+const myG=()=>pm[MEL||S.me]?grp(pm[MEL||S.me]):'A';
+const allowed=()=>needGate()?[]:APR?['GERAL','A','B','C','D','E','G']:['GERAL',FOC||myG()];
+const curP=()=>{const a=allowed();if(!a.includes(S.pn))S.pn=a[0];return S.pn};
+const minOf=(g,n)=>(S.mn&&S.mn[g]!=null&&S.mn[g]!=='')?+S.mn[g]:Math.ceil(n*.75);
+function pbar(){const a=allowed(),g=curP();
+ let h='<div class="mes pbm" style="margin:6px 0">'+a.map(k=>`<button class="${k==g?'on':''}" onclick="S.pn='${k}';sv();render()">${gi(k)} ${k=='GERAL'?'Painel':GN[k]}</button>`).join('')+'</div>';
+ h+=euBar();
+ return h}
+const TAG={'Pendente':'⏳ Aguardando aprovação','Pendente de cobertura':'⏳ Aguardando aprovação · sem cobertura','Ajuste':'✏️ Ajuste solicitado'};
+const gi=k=>k=='GERAL'?'🌐':`<b class="gb" style="background:${COR[k=='G'?'X':k]}">${k=='G'?'👔':k}</b>`;
+function sideP(){const a=allowed(),g=curP();return'<div class="pl lbl">PAINÉIS</div>'+a.map(k=>`<button class="pl ${k==g?'on':''}" onclick="goP('${k}')"><i>${gi(k)}</i>${k=='GERAL'?'Painel':GN[k]}</button>`).join('')+'<div class="pl lbl" style="margin-top:10px">MENU</div>'}
+function goP(k){S.pn=k;S.tab='Painel';sv();render();window.scrollTo(0,0)}
+function refDay(){const t=Math.floor(Date.now()/864e5);return S.gd?dn(S.gd):(t>=dn(YMIN+'-01-01')&&t<=dn(YMAX+'-12-31')?t:dn(YMIN+'-01-01'))}
+function gstat(x){const V=act().filter(v=>pm[v.pid]),ids=new Set(V.filter(v=>v.i<=x&&v.f>=x).map(v=>v.pid));
+ return['A','B','C','D','E','G'].map(g=>{const mem=S.p.filter(p=>grp(p)==g),off=mem.filter(p=>ids.has(p.id)),ef=TN.includes(g)?efet(g,x,V):null;
+  return{g,mem,off,pres:mem.filter(p=>!ids.has(p.id)),disp:mem.length-off.length,ef,below:ef?Object.keys(ef).filter(k=>ef[k]<MINC(k)):[],
+   pts:mem.reduce((s,p)=>s+V.filter(v=>v.pid==p.id).reduce((a,v)=>a+cost(v.i,v.f),0),0),tot:mem.reduce((s,p)=>s+p.sal*3,0)}})}
+function ptsTab(R){const sm=f=>R.reduce((s,r)=>s+f(r),0);
+ return`<div class="tw" style="margin-bottom:10px"><table class="tb"><tr><th>Grupo<th>Pontos usados<th>Pontos totais<th>%</tr>${R.map(r=>`<tr><td>${gi(r.g)} ${GN[r.g]}<td>${n1(r.pts)}<td>${n1(r.tot)}<td>${r.tot?Math.round(100*r.pts/r.tot):0}%`).join('')}<tr><td><b>Total geral</b><td><b>${n1(sm(r=>r.pts))}</b><td>${n1(sm(r=>r.tot))}<td>${sm(r=>r.tot)?Math.round(100*sm(r=>r.pts)/sm(r=>r.tot)):0}%</table></div>`}
+function Geral(){
+ const x=refDay(),R=gstat(x),V=act().filter(v=>pm[v.pid]),sm=f=>R.reduce((s,r)=>s+f(r),0);
+ let h=`<div class="ban"><b>🌐 Painel</b> · visão de todos os grupos ao mesmo tempo. Somente visualização.<div class="r"><label style="display:flex;gap:8px;align-items:center">Data de referência<input type="date" value="${ds(x)}" min="${YMIN}-01-01" max="${YMAX}-12-31" onchange="S.gd=this.value;sv();render()"></label><button class="btn s" onclick="S.gd='';sv();render()">Hoje</button></div></div>`;
+ h+='<div class="gcs">'+R.map(r=>`<button class="gc" onclick="goP('${r.g}')">${gi(r.g)}<b>${GN[r.g]}</b><span>${r.off.length} de férias · ${r.disp}/${r.mem.length} disponíveis</span>${r.below.length?'<span style="color:var(--er);font-weight:700">⚠ EFETIVO ABAIXO DO MÍNIMO</span>':''}</button>`).join('')+'</div>'+mesBar()+cal(['A','B','C','D','E','G']);
+ const al=[];R.forEach(r=>{if(r.ef)r.below.forEach(k=>al.push(`EFETIVO ABAIXO DO MÍNIMO · ${GN[r.g]} está com ${MINC(k)-r.ef[k]} pessoa(s) abaixo do mínimo em ${CL[k]} (${r.ef[k]} de ${MINC(k)}) em ${fm(x)}`))});
+ if(APR){const nc=confl().length;if(nc)al.push(`${nc} conflito(s) de férias entre pedidos (veja a aba Conflitos)`);const pe=V.filter(v=>v.st!='Aprovada').length;if(pe)al.push(`${pe} pedido(s) aguardando aprovação`)}
+ h+='<h2>Alertas gerais</h2>'+(al.length?`<div class="res x">${al.map(a=>'⚠ '+a).join('<br>')}</div>`:'<div class="res v">✔ Sem alertas na data de referência.</div>');
+ h+=`<h2>De férias em ${fm(x)}, por grupo</h2><div class="tw"><table class="tb"><tr><th>Grupo<th>De férias<th>Efetivo<th>Quem</tr>${R.map(r=>`<tr><td>${gi(r.g)} ${GN[r.g]}<td><b>${r.off.length}</b><td>${r.mem.length}<td>${r.off.map(p=>p.n).join(', ')||'—'}`).join('')}<tr><td><b>Total</b><td><b>${sm(r=>r.off.length)}</b><td>${sm(r=>r.mem.length)}<td></table></div>`;
+ const cc=(r,k)=>r.ef?`<span style="color:var(--${r.ef[k]<MINC(k)?'er':'ok'});font-weight:700">${r.ef[k]}/${MINC(k)}</span>`:'—';
+ h+=`<h2>Efetivo atual vs mínimo, por função</h2><div class="tw"><table class="tb"><tr><th>Grupo<th>Efetivo<th>Disponíveis<th>Painel Elét.<th>Painel Tér.<th>Campo Elét.<th>Campo Tér.<th>Situação</tr>${R.map(r=>`<tr><td>${gi(r.g)} ${GN[r.g]}<td>${r.mem.length}<td>${r.disp}<td>${cc(r,'PE')}<td>${cc(r,'PT')}<td>${cc(r,'CE')}<td>${cc(r,'CT')}<td>${r.ef?(r.below.length?'<span class="bad">EFETIVO ABAIXO DO MÍNIMO</span>':'<span class="good">OK</span>'):'—'}`).join('')}<tr><td><b>Total</b><td>${sm(r=>r.mem.length)}<td><b>${sm(r=>r.disp)}</b><td colspan=5></table></div><p class="mu" style="text-transform:none">Presentes + quem cobre de outra turma. Mínimo por turma: Painel Elétrica ${MINC('PE')} · Painel Térmica ${MINC('PT')} · Campo Elétrica ${MINC('CE')} · Campo Térmica ${MINC('CT')}.</p>`;
+ h+='<h2>Pontos de todos os grupos</h2>'+ptsTab(R);
+ const nx=V.filter(v=>v.i>=x).sort((a,b)=>a.i-b.i).slice(0,12);
+ h+=`<h2>Próximas férias marcadas</h2><div class="tw"><table class="tb"><tr><th>Nome<th>Grupo<th>Período<th>Dias<th>Status</tr>${nx.map(v=>`<tr><td>${pm[v.pid].n}<td>${gi(grp(pm[v.pid]))} ${GN[grp(pm[v.pid])]}<td>${fm(v.i)} a ${fm(v.f)}<td>${v.d}<td>${v.st}`).join('')||'<tr><td colspan=5>Nenhuma férias marcada a partir desta data.'}</table></div>`;
+ return h}
+function resumoT(g){const x=refDay(),V=act().filter(v=>pm[v.pid]),ids=new Set(V.filter(v=>v.i<=x&&v.f>=x).map(v=>v.pid)),mem=S.p.filter(p=>grp(p)==g),off=mem.filter(p=>ids.has(p.id)),pres=mem.filter(p=>!ids.has(p.id)),ef=TN.includes(g)?efet(g,x,V):null;
+ let h=`<div class="card"><div class="row" style="justify-content:space-between"><b>${gi(g)} ${GN[g]} · situação em ${fm(x)}</b><span><input type="date" value="${ds(x)}" min="${YMIN}-01-01" max="${YMAX}-12-31" onchange="S.gd=this.value;sv();render()"> <button class="btn s" onclick="S.gd='';sv();render()">Hoje</button></span></div>`;
+ if(ef)h+='<div class="gcs">'+['PE','PT','CE','CT'].map(k=>{const lo=ef[k]<MINC(k);return`<div class="gc" style="cursor:default"><b>${CL[k]}</b><b style="font-size:18px;color:var(--${lo?'er':'ok'})">${ef[k]} / mín. ${MINC(k)}</b><span style="color:var(--${lo?'er':'ok'})">${lo?'EFETIVO ABAIXO DO MÍNIMO':'dentro do mínimo'}</span></div>`}).join('')+'</div>';
+ return h+`<p><b>De férias (${off.length}):</b> ${off.map(p=>p.n).join(', ')||'—'}</p><p><b>Presentes (${pres.length}):</b> ${pres.map(p=>p.n).join(', ')||'—'}</p></div>`}
+function focais(){return'<h2>Focal de cada grupo (PIN)</h2><div class="card"><p class="mu" style="text-transform:none">O focal aprova e reprova só os pedidos do seu grupo. Defina o focal e um PIN de 4 dígitos ou mais. O Painel Geral não tem focal.</p>'+['A','B','C','D','E','G'].map(k=>`<div class="row" style="margin:8px 0;border-top:1px solid #2b3345;padding-top:8px"><b style="width:80px">${GN[k]}</b><label>Focal<select onchange="foSet('${k}',+this.value||'')"><option value="">—</option>${S.p.filter(p=>grp(p)==k).map(p=>`<option value="${p.id}" ${S.fo[k]==p.id?'selected':''}>${p.n}</option>`).join('')}</select></label><label>Novo PIN<input id="fp${k}" type="password" inputmode="numeric" autocomplete="off" style="width:110px"></label><button class="btn s" onclick="setFp('${k}')">Salvar PIN</button><span class="st">${S.fp[k]?'PIN definido':'sem PIN'}</span></div>`).join('')+'</div>'}
+function setFp(k){const v=$('#fp'+k).value;if(v.length<4)return toast('Use pelo menos 4 dígitos.');S.fp[k]=H(v);logH('Definiu o PIN do focal da '+GN[k]);sv();render();toast('PIN do focal salvo.')}
+const CL={PE:'Painel de Elétrica',PT:'Painel de Térmica',CE:'Campo de Elétrica',CT:'Campo de Térmica'};
+const MINC=k=>(S.mc&&S.mc[k]!=null&&S.mc[k]!=='')?+S.mc[k]:({PE:1,PT:2,CE:2,CT:3})[k];
+const catOf=p=>{if(p.tp!='T'||!TN.includes(p.t)||(p.a!='ELÉTRICA'&&p.a!='TÉRMICA'))return[];const e=p.a=='ELÉTRICA',r=[];if(cic(p)&&p.pn=='Sim')r.push(e?'PE':'PT');if(p.f.includes('CAMPO'))r.push(e?'CE':'CT');return r};
+function efet(t,x,V,cand){const all=cand?V.concat([cand]):V,vx=all.filter(v=>v.i<=x&&v.f>=x),off=new Set(vx.map(v=>v.pid)),res={PE:0,PT:0,CE:0,CT:0},seen=new Set();
+ S.p.filter(p=>p.tp=='T'&&p.t==t&&!off.has(p.id)).forEach(p=>catOf(p).forEach(k=>res[k]++));
+ vx.forEach(v=>{const c=pm[+v.cob],o=pm[v.pid];if(!c||!o||o.t!=t||c.t==t||off.has(c.id))return;catOf(o).forEach(k=>{const s=c.id+'|'+k;if(!seen.has(s)){seen.add(s);res[k]++}})});
+ return res}
+const FL={n:'nome',f:'função',a:'área',t:'turma',nv:'nível',cg:'cargo',ve:'vencimento',ul:'últimas férias',pu:'penúltimas férias',sal:'saldo',pn:'opera painel'};
+let UID='',UU=null,HX=[];
+const perfil=()=>APR?'Aprovador':FOC?'Focal · '+(GN[FOC]||''):'Colaborador';
+const quem=()=>{if(APR)return'Aprovador';if(FOC&&S.fo&&S.fo[FOC]&&pm[S.fo[FOC]])return pm[S.fo[FOC]].n;return pm[MEL]?pm[MEL].n:(pm[S.me]?pm[S.me].n:'—')};
+function logH(acao){const e={id:Date.now()+'_'+Math.random().toString(36).slice(2,6),t:Date.now(),pessoa:quem(),perfil:perfil(),uid:UID,acao:String(acao).slice(0,400)};
+ if(DB&&!first){DB.collection('historico').doc(e.id).set(e).catch(()=>{})}else{S.h=(S.h||[]).concat(e).slice(-500);ls()}}
+function Hist(){
+ const L=DB?HX:(S.h||[]).slice().reverse();
+ return`<h2>Histórico de alterações</h2><p class="mu" style="text-transform:none">Quem alterou, o login e o que foi alterado. Os mais recentes primeiro (últimos 300). ${APR?'Como aprovador, você pode excluir registros.':'Somente leitura: só o aprovador, com PIN, altera o histórico.'}</p>${APR?'<p><button class="btn er s" onclick="limpaH()">Limpar histórico</button></p>':''}<div class="tw"><table class="tb"><tr><th>Data e hora<th>Pessoa<th>Login<th>Alteração${APR?'<th>':''}</tr>${L.map(e=>`<tr><td style="white-space:nowrap">${new Date(e.t).toLocaleString('pt-BR')}<td>${xe(e.pessoa)}<td><b>${xe(e.perfil)}</b><br><span class="lg" data-uid="${xe(e.uid||'')}" style="color:var(--mu);font-size:12px">${e.uid?'…':'sem conta (modo local)'}</span><td>${xe(e.acao)}${APR?`<td><button class="btn s" onclick="delH('${e.id}')">Excluir</button>`:''}`).join('')||'<tr><td colspan=4>Nenhuma alteração registrada ainda.'}</table></div>`}
+function delH(id){if(!APR)return toast('Só o aprovador, com PIN, altera o histórico.');const e=(DB?HX:(S.h||[])).find(x=>x.id==id);logH('Excluiu um registro do histórico'+(e?': '+e.acao:''));if(DB&&!first){DB.collection('historico').doc(id).delete().catch(()=>toast('Não foi possível excluir.'))}else{S.h=(S.h||[]).filter(x=>x.id!=id);ls();render()}}
+function limpaH(){if(!APR)return;if(!confirm('Limpar todo o histórico? Isso vale para todos.'))return;const L=(DB&&!first)?HX.slice():(S.h||[]).slice();if(DB&&!first)L.forEach(e=>DB.collection('historico').doc(e.id).delete().catch(()=>{}));else{S.h=[];ls()}logH('Limpou o histórico ('+L.length+' registros)');render()}
+async function fillLogins(){const els=[...document.querySelectorAll('.lg[data-uid]')],ids=[...new Set(els.map(e=>e.dataset.uid).filter(Boolean))];if(!UU||!ids.length)return;try{const ps=await UU.profiles(ids);els.forEach(e=>{const q=ps[e.dataset.uid];if(q)e.textContent=(q.name||'conta do Claude')+(APR&&q.email?' · '+q.email:'')})}catch(x){}}
+function ruleSet(k,b){S.r[k]=b;logH('Regras · '+(b?'ligou':'desligou')+': '+RULES[k]);sv()}
+function ancSet(k,v){S.anc[k]=v;logH('Escala · início do 7x19 da '+GN[k]+' alterado para '+(v?fm(dn(v)):'—'));sv()}
+function mcSet(k,v){S.mc[k]=v;logH('Regras · efetivo mínimo de '+CL[k]+' alterado para '+v);sv()}
+function foSet(k,v){S.fo[k]=v;logH('Focal da '+GN[k]+' definido: '+(v&&pm[v]?pm[v].n:'ninguém'));sv()}
+function chkPair(a,b){POOL=[b];const r=chk(a.pid,a.i,a.f,a.id,a.cob);POOL=null;return[...new Set(r.E.filter((m,k)=>!['dias','painel','efetivo'].includes(r.EK[k])))]}
+function Conflitos(){const g=curP();
+ const V=act().filter(v=>pm[v.pid]),pr=[];
+ for(let x=0;x<V.length;x++)for(let y=x+1;y<V.length;y++){let a=V[x],b=V[y];if(a.pid==b.pid||a.i>b.f||b.i>a.f)continue;const r=chkPair(a,b);if(!r.length)continue;if(a.id>b.id){const t=a;a=b;b=t}pr.push({a,b,r,i:Math.max(a.i,b.i),f:Math.min(a.f,b.f)})}
+ pr.sort((p,q)=>p.i-q.i);if(g!='GERAL'){for(let k=pr.length-1;k>=0;k--)if(grp(pm[pr[k].a.pid])!=g&&grp(pm[pr[k].b.pid])!=g)pr.splice(k,1)}
+ const used=new Set();pr.forEach(p=>{used.add(p.a.id);used.add(p.b.id)});
+ const ot=confl(g).filter(c=>!used.has(c.v.id));
+ const li=v=>`<b>${pm[v.pid].n}</b> <span style="color:var(--mu);font-size:13px">${fm(v.i)} a ${fm(v.f)} · ${v.d}d</span> <span class="st">${v.st}</span>`;
+ let h=pbar()+'<h2>Conflitos entre as datas das pessoas · '+(g=='GERAL'?'todos os grupos':GN[g])+'</h2>';
+ if(!pr.length&&!ot.length)return h+'<div class="res v">✔ Nenhum conflito entre as datas marcadas.</div>';
+ h+=`<div class="res x"><b>⚠ ${pr.length+ot.length} conflito(s)</b> · a primeira linha de cada cartão é o pedido mais recente.</div>`;
+ h+=pr.map(p=>{const bx='sg'+p.a.id+'_'+p.b.id;return`<div class="card">${li(p.b)}<br>× ${li(p.a)}<div class="res x">Sobreposição: ${fm(p.i)} a ${fm(p.f)} (${p.f-p.i+1} dias)<br>${p.r.slice(0,3).join('<br>')}</div><div class="row" style="margin-top:8px"><button class="btn p s" onclick="sgC('${bx}',${p.b.id})">💡 Sugerir datas para ${pm[p.b.pid].n}</button><button class="btn s" onclick="sgC('${bx}',${p.a.id})">💡 Sugerir datas para ${pm[p.a.pid].n}</button></div><div id="${bx}"></div></div>`}).join('');
+ if(ot.length)h+='<h2>Outros conflitos (limites por dia, cobertura de painel, grupos)</h2>'+ot.map(({v,E})=>{const bx='sg'+v.id;return`<div class="card">${li(v)}<div class="res x">${E.slice(0,3).join('<br>')}</div><div style="margin-top:8px"><button class="btn p s" onclick="sgC('${bx}',${v.id})">💡 Sugerir datas</button></div><div id="${bx}"></div></div>`}).join('');
+ return h}
+function sgC(bx,id){const v=gv(id),L=sug(v.pid,v.d,id,0,v.cob);$('#'+bx).innerHTML=`<div class="res w"><b>💡 Sugestões para ${pm[v.pid].n} (${v.d} dias)</b><br>`+(L.length?L.map(a=>`<div style="margin-top:6px">${fm(a)} a ${fm(a+v.d-1)} <button class="btn s" onclick="applySug(${id},${a})">Aplicar</button></div>`).join(''):'Nenhuma data livre no período com as regras ligadas.')+'</div>'}
+function sug(pid,d,ign,from,cob){const out=[],z=dn(YMAX+'-12-31')-d+1;for(let x=Math.max(dn(YMIN+'-01-01'),from||0);x<=z&&out.length<3;x++){if(chk(pid,x,x+d-1,ign,cob).E.length)continue;out.push(x);x+=39}return out}
+function confl(g){return act().filter(v=>pm[v.pid]&&(!g||g=='GERAL'||grp(pm[v.pid])==g)).map(v=>({v,E:chk(v.pid,v.i,v.f,v.id,v.cob).E})).filter(c=>c.E.length)}
+function alertas(g){const c=confl(g);if(!c.length)return'<div class="res v" style="margin:8px 0">✔ Nenhum conflito de férias.</div>';
+ return`<div class="res x" style="margin:8px 0"><b>⚠ ${c.length} conflito(s) de férias</b> <button class="btn s" style="margin-left:8px" onclick="setTab('Conflitos')">Ver relação e sugestões</button>`+c.slice(0,8).map(({v,E})=>`<div style="margin-top:8px">${pm[v.pid].n} · ${fm(v.i)} a ${fm(v.f)}<br><small>${E[0]}</small><br><button class="btn s" style="margin-top:4px" onclick="sugV(${v.id})">💡 Sugerir nova data</button></div>`).join('')+(c.length>8?`<div style="margin-top:6px">… e mais ${c.length-8}</div>`:'')+'</div>'}
+const cf=v=>{if(v.st=='Reprovada')return'';const E=chk(v.pid,v.i,v.f,v.id,v.cob).E;return E.length?`<div class="res x"><b>⚠ Conflito</b><br>${E.slice(0,3).join('<br>')}<br><button class="btn s" style="margin-top:6px" onclick="sugV(${v.id})">💡 Sugerir nova data</button></div>`:''};
+function sugV(id){const v=gv(id),L=sug(v.pid,v.d,id,0,v.cob);toast(L.length?`<b>Sugestões para ${pm[v.pid].n} (${v.d} dias)</b>`+L.map(a=>`<div style="margin-top:6px">${fm(a)} a ${fm(a+v.d-1)} <button class="btn s" onclick="applySug(${id},${a})">Aplicar</button></div>`).join(''):'Nenhuma data livre no período com as regras ligadas.',20000)}
+function applySug(id,a){const v=gv(id),o=fm(v.i)+' a '+fm(v.f);v.i=a;v.f=a+v.d-1;logH('Alterou a data das férias de '+pm[v.pid].n+': '+o+' → '+fm(v.i)+' a '+fm(v.f));if(v.st=='Aprovada')v.st='Pendente';sv();render();toast('Data alterada. Reavalie na Aprovação.')}
+function sg(k,r){const P=pm[S.me],d=P.tp=='T'?Math.min(30,Math.max(10,Math.round(r.d/10)*10)):(r.d>0?r.d:10);let L=sug(S.me,d,0,r.a,r.c);if(!L.length)L=sug(S.me,d,0,0,r.c);
+ return`<div class="res w"><b>💡 Sugestões livres (${d} dias)</b><br>${L.length?L.map(a=>`<button class="btn s" style="margin:4px 4px 0 0" onclick="useSug(${k},${a},${d})">${fm(a)} a ${fm(a+d-1)}</button>`).join(''):'Nenhuma data livre no período com as regras ligadas.'}</div>`}
+function useSug(k,a,d){$('#i'+k).value=ds(a);$('#d'+k).value=d;live()}
+function sgBtn(k){const r=rd(k)||{a:dn(YMIN+'-01-01'),d:+$('#d'+k).value};$('#r'+k).insertAdjacentHTML('beforeend',sg(k,r))}
+function abrir(n){S.rod={st:'aberta',n,i:0};sv();toast('Rodada '+n+' aberta.');render()}
+function fechar(){S.rod.st='fechada';sv();render()}
+function prox(){S.rod.i++;if(S.rod.i>=rank().length){S.rod.st='fechada';S.rod.i=0;toast('Fim da rodada: todos já escolheram.')}sv();render()}
+
+function Ranking(){const g=curP(),o=rank(g),geral=g=='GERAL';
+ return pbar()+`<h2>Ranking ${geral?'geral':GN[g]} · 1º vencimento mais próximo · 2º mais tempo sem férias · 3º maior saldo</h2>`+(geral?ptsTab(gstat(refDay())):'')+`<div class="tw"><table class="tb"><tr><th>#<th>Nome<th>Grupo<th>Função<th>Vencimento<th>Últ. férias<th>Penúlt. férias<th>Saldo<th>Pontos usados</tr>${o.map((p,i)=>{const u=act().filter(v=>v.pid==p.id).reduce((s,v)=>s+cost(v.i,v.f),0);return`<tr><td>${i+1}<td><b>${p.n}</b><td>${GN[grp(p)]}<td>${p.tp=='T'?p.f+' '+tc(p.a):tc(p.cg)}<td>${p.ve?fm(dn(p.ve)):'—'}<td>${p.ul?fm(dn(p.ul)):'—'}<td>${p.pu?fm(dn(p.pu)):'—'}<td>${p.sal}d<td>${n1(u)} / ${n1(p.sal*3)}`}).join('')}</table></div><p class="mu">Dia normal 3,0 pts · fim de semana 3,5 · feriado 4,0. Preencha vencimento e últimas férias no Cadastro para o ranking ficar correto.</p>`;
+}
+function Rodadas(){
+ const o=rank(),r=S.rod;
+ return`<div class="card"><b>Rodada única · dois períodos</b><p>Rodada 1: ordem do ranking, cada um escolhe 1 período. Rodada 2: escolhe o 2º período.</p><p>Status: <span class="st">${r.st=='aberta'?'Rodada '+r.n+' aberta':'Fechada'}</span></p><div class="row"><button class="btn p" onclick="abrir(1)">Abrir rodada 1</button><button class="btn" onclick="abrir(2)">Abrir rodada 2</button><button class="btn" onclick="fechar()">Fechar rodada</button><button class="btn ok" onclick="prox()" ${r.st=='aberta'?'':'disabled'}>Próxima pessoa</button></div></div><div class="tw"><table class="tb"><tr><th>Ordem<th>Nome<th>Turma<th>Períodos marcados</tr>${o.map((p,i)=>`<tr style="${r.st=='aberta'&&i==r.i?'background:#173244':''}"><td>${i+1}${r.st=='aberta'&&i==r.i?' ◀ vez':''}<td>${p.n}<td>${p.t}<td>${act().filter(v=>v.pid==p.id).length}`).join('')}</table></div>`;
+}
+function Capacidade(){const g=curP(),geral=g=='GERAL',m=S.mes,n=new Date(Date.UTC(S.ano,m+1,0)).getUTCDate(),d0=dn(`${S.ano}-${String(m+1).padStart(2,'0')}-01`),V=act().filter(v=>pm[v.pid]),gs=geral?TN:(TN.includes(g)?[g]:[]);
+ const mem=S.p.filter(p=>geral||grp(p)==g),ids=new Set(mem.map(p=>p.id));
+ let h=pbar()+mesBar()+`<p class="mu" style="text-transform:none">${geral?'Todos os grupos':GN[g]} · efetivo ${mem.length} · mínimo por turma: Painel Elétrica ${MINC('PE')} · Painel Térmica ${MINC('PT')} · Campo Elétrica ${MINC('CE')} · Campo Térmica ${MINC('CT')} (ajustável em Regras)</p><div class="tw"><table class="tb"><tr><th>Dia<th>De férias<th>Painel Elét.<th>Painel Tér.<th>Campo Elét.<th>Campo Tér.<th>Situação</tr>`;
+ for(let k=0;k<n;k++){const x=d0+k,on=new Set(V.filter(v=>v.i<=x&&v.f>=x&&ids.has(v.pid)).map(v=>v.pid)),EF={},msg=[];
+  gs.forEach(t=>EF[t]=efet(t,x,V));
+  const cells=['PE','PT','CE','CT'].map(c=>{if(!gs.length)return'—';const low=gs.filter(t=>EF[t][c]<MINC(c));if(low.length&&!msg.includes('EFETIVO ABAIXO DO MÍNIMO'))msg.push('EFETIVO ABAIXO DO MÍNIMO');
+   return geral?(low.length?`<span class="bad">${low.join(', ')}</span>`:'<span class="good">OK</span>'):`<span class="${low.length?'bad':'good'}">${EF[g][c]}/${MINC(c)}</span>`});
+  const bl=[];for(const t of gs){if(esq(t,x)=='F')continue;const ops=S.p.filter(p=>p.tp=='T'&&p.t==t&&cic(p)&&p.pn=='Sim'),left=ops.filter(p=>!V.some(v=>v.pid==p.id&&v.i<=x&&v.f>=x)).length;if(ops.length&&!left)bl.push(t)}
+  if(bl.length)msg.push('Sem cobertura de painel neste dia (Turma '+bl.join(',')+')');
+  h+=`<tr><td>${String(k+1).padStart(2,'0')} ${WD[wd(x)]}${HS.has(x)?' ★':''}<td>${on.size}${cells.map(c=>'<td>'+c).join('')}<td>${msg.length?'<span class="bad">'+msg.join('<br>')+'</span>':'<span class="good">OK</span>'}`}
+ return h+'</table></div>';
+}
+function Aprov(){if(GATE_APR&&!APR&&!FOC&&!MEL)return loginApr('');let g=curP();if(g=='GERAL'&&!APR&&!FOC&&MEL){S.pn=myG();g=S.pn}
+ if(g=='GERAL')return pbar()+((APR||FOC)?aprBar():'')+'<div class="card">🌐 O Painel é somente visualização. Escolha uma turma no menu para aprovar ou reprovar.</div>';
+ if(!can(g))return pbar()+loginApr(g);
+ const L=S.v.filter(v=>pm[v.pid]&&grp(pm[v.pid])==g).sort((a,b)=>(a.st=='Aprovada')-(b.st=='Aprovada')||a.i-b.i);
+ if(!L.length)return pbar()+aprBar()+'<div class="card">Nenhum pedido neste grupo ainda. Use “Pretensão” ou “Inserir férias (gestor)”.</div>';
+ return pbar()+aprBar()+alertas(g)+L.map(v=>{const p=pm[v.pid];if(!p)return'';return`<div class="card"><b>${p.n}</b> <span class="mu">${p.tp=='T'?p.f+' '+tc(p.a)+' · Turma '+p.t+' · '+p.nv:tc(p.cg)+(p.nv?' · '+tc(p.nv):'')}</span><br>${fm(v.i)} a ${fm(v.f)} · ${v.d} dias · ${n1(cost(v.i,v.f))} pts <span class="st">${v.st}</span>${cf(v)}<div class="row" style="margin-top:8px"><label>Quem cobre<select onchange="setCob(${v.id},this.value)"><option value="">— ninguém —</option>${S.p.filter(q=>q.id!=p.id).map(q=>`<option value="${q.id}" ${q.id==v.cob?'selected':''}>${q.n}</option>`).join('')}</select></label><label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" ${v.fx?'checked':''} onchange="setFx(${v.id},this.checked)">Equipe mínima</label></div><div class="row" style="margin-top:8px"><button class="btn ok s" onclick="dec(${v.id},'Aprovada')">Aprovar</button><button class="btn er s" onclick="dec(${v.id},'Reprovada')">Reprovar</button><button class="btn s" onclick="dec(${v.id},'Ajuste')">Pedir ajuste</button><button class="btn s" onclick="delV(${v.id})">Excluir</button></div></div>`}).join('');
+}
+const gv=id=>S.v.find(v=>v.id==id);
+const vg=id=>{const v=gv(id);return v&&pm[v.pid]?grp(pm[v.pid]):''};
+function setCob(id,c){if(!can(vg(id)))return;const v=gv(id),o=pm[+v.cob],w=pm[+c];v.cob=+c||'';logH('Alterou quem cobre as férias de '+pm[v.pid].n+' ('+fm(v.i)+'): '+(o?o.n:'ninguém')+' → '+(w?w.n:'ninguém'));sv()}
+function setFx(id,b){if(!can(vg(id)))return;const v=gv(id);v.fx=b;logH((b?'Marcou':'Desmarcou')+' equipe mínima nas férias de '+pm[v.pid].n+' ('+fm(v.i)+' a '+fm(v.f)+')');sv()}
+
+let FPV=0;
+const fpCan=v=>can(grp(pm[v.pid]))||(MEL&&MEL==v.pid&&v.st!='Aprovada');
+function closeFP(){FPV=0;const e=$('#fpo');if(e)e.remove()}
+function openFP(id){const v=gv(id);if(!v||!pm[v.pid])return;FPV=id;let e=$('#fpo');if(!e){e=document.createElement('div');e.id='fpo';e.className='fpo';e.onclick=ev=>{if(ev.target==e)closeFP()};document.body.append(e)}
+ const p=pm[v.pid],g=grp(p),acts=curP()!='GERAL'&&fpCan(v),x=chk(v.pid,v.i,v.f,v.id,v.cob),cb=pm[+v.cob];
+ e.innerHTML=`<div class="fpc"><div class="row" style="justify-content:space-between;margin:0"><h3>${gi(g)} ${xe(p.n)}</h3><button class="btn s" onclick="closeFP()">✕</button></div><div class="st">${GN[g]} · ${p.tp=='T'?xe(p.f+' '+tc(p.a)):xe(tc(p.cg)+' '+tc(p.a))}</div>
+ <div class="kv"><span>Período</span><b>${fm(v.i)} a ${fm(v.f)}</b><span>Dias</span><b>${v.d}</b><span>Pontos</span><b>${n1(cost(v.i,v.f))}</b><span>Status</span><b>${v.st=='Aprovada'?'✅ Aprovada':(TAG[v.st]||'⏳ '+v.st)}</b><span>Quem cobre</span><b>${cb?xe(cb.n):'—'}</b></div>
+ ${x.E.length?'<div class="res x"><b>⚠ Conflitos</b><br>'+x.E.map(xe).join('<br>')+'</div>':'<div class="res v"><b>Sem conflitos</b></div>'}
+ ${acts?`<div class="row"><button class="btn p" onclick="fpRe()">📅 Reagendar</button><button class="btn dg" onclick="fpEx()">🗑 Excluir</button></div><div id="fpx"></div>`:''}</div>`}
+function fpEx(){$('#fpx').innerHTML='<div class="res w" style="margin-top:10px"><b>Excluir estas férias?</b> Isso não pode ser desfeito.<div class="row"><button class="btn dg s" onclick="fpEx2()">Sim, excluir</button><button class="btn s" onclick="$(\'#fpx\').innerHTML=\'\'">Cancelar</button></div></div>'}
+function fpEx2(){const id=FPV;delV(id);closeFP()}
+function fpRe(){const v=gv(FPV);$('#fpx').innerHTML=`<div class="card" style="margin-top:10px"><b>Nova data</b><div class="row"><label>Início<input type="date" id="fpd" value="${ds(v.i)}" min="${YMIN}-01-01" max="${YMAX}-12-31" oninput="fpLive()"></label><label>Dias<select id="fpn" onchange="fpLive()">${[...new Set([10,20,30,v.d])].sort((a,b)=>a-b).map(n=>`<option ${n==v.d?'selected':''}>${n}</option>`).join('')}</select></label></div><div id="fpr"></div><div class="row"><button class="btn p s" onclick="fpSave()">Salvar nova data</button><button class="btn s" onclick="$('#fpx').innerHTML=''">Cancelar</button></div></div>`;fpLive()}
+function fpRd(){const i=$('#fpd').value;if(!i)return null;const a=dn(i),d=+$('#fpn').value;return{a,d,f:a+d-1}}
+function fpLive(){const v=gv(FPV),r=fpRd(),b=$('#fpr');if(!r){b.innerHTML='';return}
+ const dp=act().find(w=>w.pid==v.pid&&w.id!=v.id&&w.i<=r.f&&w.f>=r.a),x=chk(v.pid,r.a,r.f,v.id,v.cob);
+ b.innerHTML=(dp?'<div class="res x"><b>⛔ Não permitido</b> · já existe férias desta pessoa de '+fm(dp.i)+' a '+fm(dp.f)+'.</div>':x.E.length?'<div class="res x"><b>⚠ Conflito</b> · fica como pretensão pendente de aprovação<br>'+x.E.map(xe).join('<br>')+'</div>':'<div class="res v"><b>Livre</b> · nenhuma regra violada</div>')+`<div class="st">Fim: ${fm(r.f)} · ${n1(cost(r.a,r.f))} pontos</div>`}
+function fpSave(){const v=gv(FPV),r=fpRd();if(!v||!r||!fpCan(v))return toast('Não foi possível reagendar.');
+ const dp=act().find(w=>w.pid==v.pid&&w.id!=v.id&&w.i<=r.f&&w.f>=r.a);if(dp)return toast('<b>⛔ Não permitido:</b> já existe férias desta pessoa de '+fm(dp.i)+' a '+fm(dp.f)+'.');
+ const x=chk(v.pid,r.a,r.f,v.id,v.cob),o=fm(v.i)+' a '+fm(v.f),gp=can(grp(pm[v.pid])),was=v.st;
+ v.i=r.a;v.f=r.f;v.d=r.d;
+ v.st=(gp&&was=='Aprovada'&&!x.E.length)?'Aprovada':(S.r.cobertura&&!v.cob&&!v.fx?'Pendente de cobertura':'Pendente');
+ logH('Reagendou as férias de '+pm[v.pid].n+': '+o+' → '+fm(r.a)+' a '+fm(r.f)+' ('+r.d+' dias) · '+v.st+(x.E.length?' · com conflito':''));
+ sv();closeFP();render();toast(v.st=='Aprovada'?'Reagendado e mantido como aprovado.':'<b>Reagendado.</b> Fica '+v.st.toLowerCase()+' até o aprovador confirmar.')}
+function delV(id){const v0=gv(id);if(!(can(vg(id))||(v0&&MEL&&MEL==v0.pid&&v0.st!='Aprovada')))return toast('Somente o aprovador, o focal do grupo ou o próprio (se ainda não aprovado) pode excluir.');if(v0&&pm[v0.pid])logH('Excluiu as férias de '+pm[v0.pid].n+' ('+fm(v0.i)+' a '+fm(v0.f)+')');S.v=S.v.filter(v=>v.id!=id);sv();render()}
+function dec(id,st){if(!can(vg(id)))return toast('Somente o aprovador ou o focal do grupo pode aprovar.');const v=gv(id);
+ if(st=='Aprovada'){const r=chk(v.pid,v.i,v.f,id,v.cob);
+  if(r.E.length){toast('<b>Não foi possível aprovar:</b><br>'+r.E.join('<br>'));return}
+  if(S.r.cobertura&&!v.cob&&!v.fx){v.st='Pendente de cobertura';logH('Tentou aprovar sem cobertura, ficou Pendente de cobertura: '+pm[v.pid].n+' ('+fm(v.i)+' a '+fm(v.f)+')');sv();render();toast('Sem cobertura definida: fica como “Pendente de cobertura”.');return}}
+ v.st=st;logH(({Aprovada:'Aprovou',Reprovada:'Reprovou',Ajuste:'Pediu ajuste de'})[st]+' as férias de '+pm[v.pid].n+' ('+fm(v.i)+' a '+fm(v.f)+')');sv();render();if(st=='Aprovada')toast('Aprovado. Calendário e capacidade atualizados.')}
+
+function Regras(){const g=curP(),gl=APR?TN:(TN.includes(g)?[g]:[]),dis=APR?'':'disabled';
+ let h=pbar()+`<h2>Regras · ${g=='GERAL'?'todos os grupos':GN[g]}</h2><p class="mu" style="text-transform:none">As regras de férias valem para todos os grupos. Só o aprovador liga ou desliga.</p><div class="card">`+Object.entries(RULES).map(([k,t])=>`<label class="sw"><input type="checkbox" ${dis} ${S.r[k]?'checked':''} onchange="ruleSet('${k}',this.checked)">${t}</label>`).join('')+'</div>';
+ h+='<h2>Escala 2x2 · dia em que cada turma começa o 7x19 (ciclo de 10 dias: 2 dias 7x19, 2 noites 19x7, 6 de folga)</h2><div class="card row">'+gl.map(k=>`<label>${GN[k]}<input type="date" ${dis} value="${S.anc[k]}" onchange="ancSet('${k}',this.value)"></label>`).join('')+'</div>';
+ h+=`<h2>Efetivo mínimo por turma e função</h2><div class="card"><div class="row">${['PE','PT','CE','CT'].map(k=>`<label>${CL[k]}<input type="number" min="0" style="width:90px" ${dis} value="${MINC(k)}" onchange="mcSet('${k}',+this.value)"></label>`).join('')}</div><p class="mu" style="text-transform:none">Vale para cada turma (A a E). Conta quem está presente mais quem cobre vindo de outra turma. Painel = CIC que opera painel; Campo = função de campo.</p><div class="tw"><table class="tb"><tr><th>Turma<th>Painel Elét.<th>Painel Tér.<th>Campo Elét.<th>Campo Tér.</tr>${TN.map(t=>{const c=efet(t,-1e9,[]);return`<tr><td>${gi(t)} ${GN[t]}${['PE','PT','CE','CT'].map(k=>`<td><span style="color:var(--${c[k]<MINC(k)?'er':'ok'});font-weight:700">${c[k]}/${MINC(k)}</span>`).join('')}`}).join('')}</table></div><p class="mu" style="text-transform:none">Quantidade no cadastro / mínimo. Em vermelho, o cadastro já está abaixo do mínimo, então qualquer férias nessa função só passa com cobertura de outra turma.</p></div>`;
+ if(APR)h+=focais()+`<p></p><button class="btn er" onclick="if(confirm('Apagar tudo e voltar ao cadastro original? Isso vale para TODOS os usuários.')){logH('Restaurou os dados originais (apagou tudo)');S=def();mig();sv();render()}">Restaurar dados originais</button>`;
+ return h;
+}
+const NV=['CERTIFICADO','EXPERIENTE','HABILITADO'],CG=['TÉCNICO DE OPERAÇÃO','GERENTE','SUPERVISOR','INTERINO','ENGENHEIRO','CTO','ESPECIALISTA'];
+const sel=(o,v,i,f)=>`<select onchange="ed(${i},'${f}',this.value)">${o.map(x=>`<option ${x==v?'selected':''}>${x}</option>`).join('')}</select>`;
+function Cadastro(){if(!APR){const txt=v=>v?xe(v):'—';
+  return`<div class="res w" style="margin:0 0 8px">🔒 Cadastro somente para leitura. Só o aprovador, com PIN, edita, adiciona ou remove pessoas.</div><div class="tw"><table class="tb"><tr><th>Nome<th>Função<th>Área<th>Turma<th>Cargo<th>Nível<th>Vencimento<th>Últ. férias<th>Penúlt. férias<th>Saldo<th>Painel?</tr>${S.p.map(p=>`<tr><td><b>${xe(p.n)}</b><td>${p.tp=='T'?txt(p.f):'—'}<td>${txt(p.a)}<td>${txt(p.t)}<td>${txt(p.cg)}<td>${txt(p.nv)}<td>${p.ve?fm(dn(p.ve)):'—'}<td>${p.ul?fm(dn(p.ul)):'—'}<td>${p.pu?fm(dn(p.pu)):'—'}<td>${p.sal}d<td>${p.pn}`).join('')}</table></div>`}
+ return`<div class="row" style="margin-bottom:8px"><button class="btn s" onclick="addP('T')">+ TO</button><button class="btn s" onclick="addP('G')">+ Gestão</button></div><div class="tw"><table class="tb"><tr><th>Nome<th>Função<th>Área<th>Turma<th>Cargo<th>Nível<th>Vencimento<th>Últ. férias<th>Penúlt. férias<th>Saldo<th>Painel?<th></tr>${S.p.map((p,i)=>`<tr><td><input value="${p.n}" onchange="ed(${i},'n',this.value)"><td>${p.tp=='T'?sel(['CAMPO','CIC','CAMPO/CIC'],p.f,i,'f'):'—'}<td>${sel(['TÉRMICA','ELÉTRICA','U06',''],p.a,i,'a')}<td>${sel(['A','B','C','D','E','ADM',''],p.t,i,'t')}<td>${sel(CG,p.cg,i,'cg')}<td>${sel(['',...NV],p.nv,i,'nv')}<td><input type="date" value="${p.ve||''}" onchange="ed(${i},'ve',this.value)"><td><input type="date" value="${p.ul||''}" onchange="ed(${i},'ul',this.value)"><td><input type="date" value="${p.pu||''}" onchange="ed(${i},'pu',this.value)"><td><input type="number" style="min-width:60px" value="${p.sal}" onchange="ed(${i},'sal',+this.value)"><td>${sel(['Sim','Não'],p.pn,i,'pn')}<td><button class="btn s" onclick="delP(${i})">✕</button>`).join('')}</table></div>`;
+}
+function ed(i,f,v){if(!APR)return toast('Cadastro somente para leitura. Só o aprovador altera.');const p=S.p[i];if(p[f]!==v)logH('Cadastro · '+p.n+': '+(FL[f]||f)+' "'+(p[f]??'')+'" → "'+v+'"');p[f]=v;if(f=='cg'){p.tp=v=='TÉCNICO DE OPERAÇÃO'?'T':'G';if(p.tp=='T'&&!p.f)p.f='CAMPO';if(p.tp=='G')p.pn='Não'}
+ if(f=='nv'&&p.tp=='T')p.pn=(v=='HABILITADO'||!v)?'Não':'Sim';sv();if(f=='nv'||f=='cg')render()}
+function addP(tp){if(!APR)return toast('Cadastro somente para leitura. Só o aprovador altera.');logH('Cadastro · adicionou '+(tp=='T'?'um TO':'uma pessoa da Gestão'));S.p.push({id:Math.max(...S.p.map(p=>p.id))+1,n:'Novo',f:'CAMPO',a:'TÉRMICA',t:'A',nv:tp=='T'?'HABILITADO':'',cg:tp=='T'?'TÉCNICO DE OPERAÇÃO':'SUPERVISOR',tp,ve:'',ul:'',pu:'',sal:30,pn:'Não'});sv();render()}
+function delP(i){if(!APR)return toast('Cadastro somente para leitura. Só o aprovador altera.');if(confirm('Remover '+S.p[i].n+'?')){logH('Cadastro · removeu '+S.p[i].n);S.v=S.v.filter(v=>v.pid!=S.p[i].id);S.p.splice(i,1);sv();render()}}
+
+const gMeu=()=>FOC||myG();
+function pessoaSel(){const gs=APR?['A','B','C','D','E','G']:[gMeu()];
+ return`<label>Lançar férias para${APR?'':' ('+GN[gMeu()]+')'}<select id="pp" onchange="S.me=+this.value;sv();render()">${gs.map(g=>{const L=S.p.filter(p=>grp(p)==g);return L.length?`<optgroup label="${GN[g]}">${L.map(p=>`<option value="${p.id}" ${p.id==S.me?'selected':''}>${xe(p.n)}${MEL==p.id?' (eu)':''}</option>`).join('')}</optgroup>`:''}).join('')}</select></label>`}
+function Pret(){
+ const o=S.p.map(p=>`<option value="${p.id}" ${p.id==S.me?'selected':''}>${p.n} (${p.cg} · ${p.t||'—'} · ${p.nv||'—'})</option>`).join(''),c=S.p.map(p=>`<option value="${p.id}">${p.n}</option>`).join('');
+ const opt=k=>`<div class="card"><b>${k}ª opção</b><div class="row"><label>Data início<input type="date" id="i${k}" min="${YMIN}-01-01" max="${YMAX}-12-31" oninput="live()"></label><label>Dias (10/20/30)<input type="number" id="d${k}" value="${k==1?20:10}" style="width:80px" oninput="live()"></label><label>Data fim<input id="f${k}" disabled style="width:130px"></label><label>Quem cobre<select id="c${k}" onchange="live()"><option value="">—</option>${c}</select></label></div><div id="r${k}"></div><div style="margin-top:8px"><button class="btn p s" onclick="reg(${k})">Registrar ${k}ª opção</button> <button class="btn s" onclick="sgBtn(${k})">💡 Sugerir datas</button></div></div>`;
+ const mv=act().filter(v=>v.pid==S.me&&pm[v.pid]).map(v=>`<li>${fm(v.i)} a ${fm(v.f)} · ${v.d}d · <span class="st">${v.st}</span></li>`).join('');
+ return`<div class="res w" style="margin:0 0 8px">Você pode lançar pretensão de férias das pessoas do seu grupo. Se houver conflito, o app avisa e o pedido fica como pretensão pendente de aprovação do gestor.</div><div class="card row">${pessoaSel()}<label style="flex-direction:row;align-items:center;gap:6px;${pm[S.me]&&can(grp(pm[S.me]))?'':'display:none'}"><input type="checkbox" id="gs" ${gestor?'checked':''} onchange="gestor=this.checked">Inserir como gestor (aprova direto)</label><label style="flex-direction:row;align-items:center;gap:6px;${pm[S.me]&&can(grp(pm[S.me]))?'':'display:none'}"><input type="checkbox" id="fx">Equipe mínima (flexibiliza cobertura)</label></div>${opt(1)}${opt(2)}<h2>Férias de ${pm[S.me]?xe(pm[S.me].n):''}</h2><ul>${mv||'<li class="mu">Nenhum período registrado.</li>'}</ul>`;
+}
+function rd(k){const i=$('#i'+k).value;if(!i)return null;const d=+$('#d'+k).value,a=dn(i);return{a,d,f:a+d-1,c:+$('#c'+k).value||''}}
+function live(){[1,2].forEach(k=>{const r=rd(k),b=$('#r'+k);if(!r){b.innerHTML='';$('#f'+k).value='';return}
+ $('#f'+k).value=fm(r.f);const x=chk(S.me,r.a,r.f,0,r.c),dp=act().find(v=>v.pid==S.me&&v.i<=r.f&&v.f>=r.a);
+ b.innerHTML=(dp?'<div class="res x"><b>⛔ Não permitido</b> · você já marcou férias de '+fm(dp.i)+' a '+fm(dp.f)+'. Não dá para marcar a mesma data duas vezes.</div>':x.E.length?`<div class="res x"><b>⚠ Conflito</b> · será registrado como pretensão pendente de aprovação<br>${x.E.join('<br>')}</div>`:'<div class="res v"><b>Livre</b> · nenhuma regra violada</div>')+x.W.map(w=>`<div class="res w">⚠ ${w}</div>`).join('')+(!r.c&&S.r.cobertura?'<div class="res w">Sem cobertura: ficará “Pendente de cobertura”.</div>':'')+(x.E.length?sg(k,r):'')})}
+function reg(k){const r=rd(k);if(!r)return toast('Informe a data de início.');
+ if(!APR&&pm[S.me]&&grp(pm[S.me])!=gMeu())return toast('Você só pode lançar férias de pessoas do seu grupo ('+GN[gMeu()]+').');
+ const gp=pm[S.me]?can(grp(pm[S.me])):false,g=$('#gs').checked&&gp,fx=$('#fx').checked&&gp,R=S.rod,o=rank();
+ 
+ const dp=act().find(v=>v.pid==S.me&&v.i<=r.f&&v.f>=r.a);if(dp)return toast('<b>⛔ Não permitido:</b> você já marcou férias de '+fm(dp.i)+' a '+fm(dp.f)+'. Não dá para marcar a mesma data duas vezes.',10000);
+ const x=chk(S.me,r.a,r.f,0,r.c),cx=x.E.length>0;
+ const ok=r.c||fx||!S.r.cobertura;
+ S.v.push({id:Date.now(),pid:S.me,i:r.a,f:r.f,d:r.d,cob:r.c,fx,rod:R.n,st:ok?(g&&!cx?'Aprovada':'Pendente'):'Pendente de cobertura'});
+ {const nv=S.v[S.v.length-1];logH('Registrou férias de '+pm[S.me].n+': '+fm(r.a)+' a '+fm(r.f)+' ('+r.d+' dias) · '+nv.st+(cx?' · com conflito':'')+(g?' · inserido como gestor':''))}sv();toast(cx?'<b>⚠ Conflito: registrado como pretensão pendente de aprovação</b><br>'+x.E.slice(0,3).join('<br>')+'<br><button class="btn s" style="margin-top:6px" onclick="sugV('+S.v[S.v.length-1].id+')">💡 Sugerir nova data</button>':'Registrado: '+S.v[S.v.length-1].st,cx?20000:7000);render()}
+
+function xe(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function exp(){if(!APR)return toast('Só o aprovador exporta os dados.');
+ const sh=(n,r)=>`<Worksheet ss:Name="${n}"><Table>${r.map(l=>'<Row>'+l.map(c=>`<Cell><Data ss:Type="String">${xe(c)}</Data></Cell>`).join('')+'</Row>').join('')}</Table></Worksheet>`;
+ const F=['id','nome','tipo','funcao','area','turma','nivel','vencimento','ultimas_ferias','saldo','painel','cargo','penultimas_ferias'],V=['pessoa_id','inicio','fim','dias','cobre_id','status','equipe_minima'];
+ const x=`<?xml version="1.0"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">`+sh('Cadastro',[F,...S.p.map(p=>[p.id,p.n,p.tp,p.f,p.a,p.t,p.nv,p.ve,p.ul,p.sal,p.pn,p.cg,p.pu||''])])+sh('Ferias',[V,...S.v.map(v=>[v.pid,ds(v.i),ds(v.f),v.d,v.cob,v.st,v.fx?1:0])])+'</Workbook>';
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([x],{type:'application/vnd.ms-excel'}));a.download='ferias_2027.xls';a.click();logH('Exportou os dados para Excel');toast('Exportado: ferias_2027.xls (abre no Excel).')}
+function imp(el){if(!APR){toast('Só o aprovador importa dados.');el.value='';return}const f=el.files[0];if(!f)return;f.text().then(t=>{try{
+ const d=new DOMParser().parseFromString(t,'text/xml'),W={};
+ for(const w of d.getElementsByTagName('Worksheet'))W[w.getAttribute('ss:Name')]=[...w.getElementsByTagName('Row')].slice(1).map(r=>[...r.getElementsByTagName('Data')].map(c=>c.textContent));
+ if(!W.Cadastro)throw 0;
+ S.p=W.Cadastro.map(r=>({id:+r[0],n:r[1],tp:r[2],f:r[3],a:r[4],t:r[5],nv:r[6],ve:r[7],ul:r[8],sal:+r[9],pn:r[10],cg:r[11]||undefined,pu:r[12]||''}));mig();
+ S.v=(W.Ferias||[]).map((r,k)=>({id:Date.now()+k,pid:+r[0],i:dn(r[1]),f:dn(r[2]),d:+r[3],cob:+r[4]||'',st:r[5],fx:r[6]=='1'}));
+ logH('Importou arquivo (dados substituídos)');sv();render();toast('Importado com sucesso.')}catch(e){toast('Arquivo inválido. Importe o .xls gerado pelo botão Exportar.')}})}
+render();
+/* ===== SINCRONIZAÇÃO ONLINE (tempo real) ===== */
+const cs=o=>JSON.stringify(o,(k,v)=>v&&typeof v=='object'&&!Array.isArray(v)?Object.keys(v).sort().reduce((a,x)=>(a[x]=v[x],a),{}):v);
+let DB=null,RM={p:{},v:{},c:null},SENT={p:{},v:{},c:null},rdy={p:0,v:0,c:0},pend=false,first=true;
+const net=t=>{const e=$('#net');if(e)e.textContent=t};
+function push(){if(!DB||first)return;const ops=[];
+ const dif=(col,arr,k)=>{const nw={};arr.forEach(o=>nw[o.id]=cs(o));
+  for(const id in nw)if(SENT[k][id]!==nw[id]){SENT[k][id]=nw[id];ops.push(DB.collection(col).doc(String(id)).set(JSON.parse(nw[id])))}
+  for(const id in SENT[k])if(!(id in nw)){delete SENT[k][id];ops.push(DB.collection(col).doc(String(id)).delete())}};
+ dif('ferias',S.v,'v');dif('pessoas',S.p,'p');
+ const c=cs({r:S.r,rod:S.rod,anc:S.anc,pin:S.pin||'',fo:S.fo||{},fp:S.fp||{},mc:S.mc||{}});
+ if(SENT.c!==c){SENT.c=c;ops.push(DB.doc('cfg/main').set({...JSON.parse(c),seeded:true}).catch(e=>{SENT.c=RM.c;if(S.tab=='Regras'||S.tab=='Aprovação')toast('Só o gestor/editor altera as regras, a escala e o PIN.')}))}
+ if(ops.length)Promise.all(ops).then(()=>net('🟢 online')).catch(e=>{toast('Sem permissão para salvar isso (cadastro, regras e rodadas só o gestor/editor altera). Voltando ao estado compartilhado.');SENT={p:{...RM.p},v:{...RM.v},c:RM.c};if(RM.c!=null)applyRemote()})}
+function applyRemote(){S.v=Object.values(RM.v).map(s=>JSON.parse(s)).sort((a,b)=>a.id-b.id);S.p=Object.values(RM.p).map(s=>JSON.parse(s)).sort((a,b)=>a.id-b.id);
+ if(RM.c){const c=JSON.parse(RM.c);S.r={...S.r,...c.r};S.rod=c.rod||S.rod;S.anc=c.anc||S.anc;S.pin=c.pin||'';S.fo=c.fo||{};S.fp=c.fp||{};S.mc=c.mc||{}}
+ mig();ls();refresh()}
+function refresh(){if(needGate())return;if(S.tab=='Pretensão'){pm={};S.p.forEach(p=>pm[p.id]=p);if(pm[S.me])live();return}
+ const a=document.activeElement;if(a&&/INPUT|SELECT|TEXTAREA/.test(a.tagName)){pend=true;return}render()}
+document.addEventListener('focusout',()=>{if(pend)setTimeout(()=>{const a=document.activeElement;if(!(a&&/INPUT|SELECT|TEXTAREA/.test(a.tagName))){pend=false;render()}},250)});
+function ing(){if(!(rdy.p&&rdy.v&&rdy.c))return;
+ if(first){first=false;if(RM.c==null){net('🟡 iniciando dados…');SENT={p:{},v:{},c:null};push();return}}
+ applyRemote();net('🟢 online')}
+(async()=>{try{
+ if(!(window.claude&&claude.use))return;
+ try{UU=await claude.use('user');if(UU){const m=await UU.me();UID=m.id||''}}catch(e){}
+ DB=await claude.use('db');if(!DB){net('⚪ local (entre na conta)');return}
+ net('🟡 conectando…');const er=e=>net('⚪ local ('+((e&&e.code)||'erro')+')');
+ const col=(c,k)=>DB.collection(c).onSnapshot(s=>{RM[k]={};s.docs.forEach(d=>RM[k][d.id]=cs(d.data()));SENT[k]={...RM[k]};rdy[k]=1;ing()},er);
+ col('ferias','v');col('pessoas','p');
+ DB.collection('historico').orderBy('t','desc').limit(300).onSnapshot(s=>{HX=s.docs.map(d=>d.data());if(S.tab=='Histórico')render()},()=>{});
+ DB.doc('cfg/main').onSnapshot(s=>{if(s.exists){const d={...s.data()};delete d.seeded;RM.c=cs(d)}else RM.c=null;SENT.c=RM.c;rdy.c=1;ing()},er);
+ setTimeout(()=>{if(first)net('⚪ sem conexão — dados locais')},10000);
+}catch(e){net('⚪ local')}})();
+</script></body></html>
